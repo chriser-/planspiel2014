@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: eb18c6186eae5dc4c802afaaa1092e3c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Liane-Blatt
+    100004: Liane-Blatt_001
+    100006: Liane-Blatt_002
+    100008: Liane-Blatt_003
+    100010: Liane-Blatt_004
+    100012: Liane-Blatt_005
+    100014: Liane-Blatt_006
+    100016: Liane-Blatt_007
+    100018: Liane-Blatt_008
+    100020: Liane-Blatt_009
+    100022: Liane-Blatt_010
+    100024: Liane-Blatt_011
+    100026: Liane-Blatt_012
+    100028: Liane-Blatt_013
+    100030: Liane-Blatt_014
+    100032: Liane-Blatt_015
+    100034: Liane-Main
+    400000: //RootNode
+    400002: Liane-Blatt
+    400004: Liane-Blatt_001
+    400006: Liane-Blatt_002
+    400008: Liane-Blatt_003
+    400010: Liane-Blatt_004
+    400012: Liane-Blatt_005
+    400014: Liane-Blatt_006
+    400016: Liane-Blatt_007
+    400018: Liane-Blatt_008
+    400020: Liane-Blatt_009
+    400022: Liane-Blatt_010
+    400024: Liane-Blatt_011
+    400026: Liane-Blatt_012
+    400028: Liane-Blatt_013
+    400030: Liane-Blatt_014
+    400032: Liane-Blatt_015
+    400034: Liane-Main
+    2300000: Liane-Blatt
+    2300002: Liane-Blatt_001
+    2300004: Liane-Blatt_002
+    2300006: Liane-Blatt_003
+    2300008: Liane-Blatt_004
+    2300010: Liane-Blatt_005
+    2300012: Liane-Blatt_006
+    2300014: Liane-Blatt_007
+    2300016: Liane-Blatt_008
+    2300018: Liane-Blatt_009
+    2300020: Liane-Blatt_010
+    2300022: Liane-Blatt_011
+    2300024: Liane-Blatt_012
+    2300026: Liane-Blatt_013
+    2300028: Liane-Blatt_014
+    2300030: Liane-Blatt_015
+    2300032: Liane-Main
+    3300000: Liane-Blatt
+    3300002: Liane-Blatt_001
+    3300004: Liane-Blatt_002
+    3300006: Liane-Blatt_003
+    3300008: Liane-Blatt_004
+    3300010: Liane-Blatt_005
+    3300012: Liane-Blatt_006
+    3300014: Liane-Blatt_007
+    3300016: Liane-Blatt_008
+    3300018: Liane-Blatt_009
+    3300020: Liane-Blatt_010
+    3300022: Liane-Blatt_011
+    3300024: Liane-Blatt_012
+    3300026: Liane-Blatt_013
+    3300028: Liane-Blatt_014
+    3300030: Liane-Blatt_015
+    3300032: Liane-Main
+    4300000: Liane-Blatt_015
+    4300002: Liane-Blatt_014
+    4300004: Liane-Blatt_013
+    4300006: Liane-Blatt_011
+    4300008: Liane-Blatt_012
+    4300010: Liane-Blatt_010
+    4300012: Liane-Blatt_009
+    4300014: Liane-Blatt_008
+    4300016: Liane-Blatt_007
+    4300018: Liane-Blatt_006
+    4300020: Liane-Blatt_005
+    4300022: Liane-Blatt_004
+    4300024: Liane-Blatt_003
+    4300026: Liane-Blatt_002
+    4300028: Liane-Blatt_001
+    4300030: Liane-Blatt
+    4300032: Liane-Main
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

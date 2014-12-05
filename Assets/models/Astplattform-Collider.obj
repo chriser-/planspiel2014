@@ -1,0 +1,11 @@
+# Blender v2.72 (sub 0) OBJ File: 'Astplattform.blend'
+# www.blender.org
+mtllib Astplattform-Collider.mtl
+o Collider_Astplattform-Collider
+v 1.774173 2.267158 1.877721
+v 3.774173 2.267158 1.877721
+v 1.774173 2.267158 -1.122279
+v 3.774173 2.267158 -1.122279
+usemtl None
+s off
+f 1 2 4 3
