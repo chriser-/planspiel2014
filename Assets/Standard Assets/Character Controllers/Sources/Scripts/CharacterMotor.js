@@ -7,6 +7,8 @@ var canControl : boolean = true;
 
 var useFixedUpdate : boolean = true;
 
+var spawnPoint : Transform;
+
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
 // Very handy for organization!
 
@@ -175,8 +177,11 @@ private var tr : Transform;
 
 private var controller : CharacterController;
 
+private var anim : Animator;
+
 function Awake () {
 	controller = GetComponent (CharacterController);
+    anim = GetComponent (Animator);
 	tr = transform;
 }
 
@@ -306,6 +311,15 @@ private function UpdateFunction () {
         movingPlatform.activeGlobalRotation = tr.rotation;
         movingPlatform.activeLocalRotation = Quaternion.Inverse(movingPlatform.activePlatform.rotation) * movingPlatform.activeGlobalRotation; 
 	}
+
+    tr.position.z = 0;
+    anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+    anim.SetFloat("Jump", velocity.y);
+
+    if(tr.position.y < -20) {
+        tr.position = spawnPoint.position;
+        SetVelocity(Vector3.zero);
+    }
 }
 
 function FixedUpdate () {

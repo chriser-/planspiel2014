@@ -1039,10 +1039,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400136}
-  - 111: {fileID: 11100000}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: MyMario
   m_TagString: Untagged
@@ -1921,7 +1921,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100134}
   m_LocalRotation: {x: .499998212, y: -.499998212, z: -.500001788, w: .500001788}
-  m_LocalPosition: {x: 2.67371896e-14, y: .931541622, z: -8.51731699e-08}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400124}
@@ -1936,7 +1936,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100136}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -1.85000002, y: 1.52999997, z: -2.4000001}
+  m_LocalPosition: {x: 2, y: 4.57999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400134}
@@ -2000,31 +2000,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!111 &11100000
-Animation:
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100136}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400002, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400004, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400006, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400008, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400010, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400012, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400014, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400016, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400018, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  - {fileID: 7400020, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 9000000, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
+  m_Controller: {fileID: 9100000, guid: c02c51ffdcbe3c6499e6d2fe05b2d9a2, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2051,6 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canControl: 1
   useFixedUpdate: 1
+  spawnPoint: {fileID: 0}
   movement:
     maxForwardSpeed: 10
     maxSidewaysSpeed: 10
@@ -2591,13 +2582,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100136}
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.5
   m_Radius: .5
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
