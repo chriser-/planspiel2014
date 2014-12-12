@@ -312,14 +312,16 @@ private function UpdateFunction () {
         movingPlatform.activeLocalRotation = Quaternion.Inverse(movingPlatform.activePlatform.rotation) * movingPlatform.activeGlobalRotation; 
 	}
 
-    tr.position.z = 0;
-    anim.SetFloat("Speed", Mathf.Abs(velocity.x));
-    anim.SetFloat("Jump", velocity.y);
-
     if(tr.position.y < -20) {
         tr.position = spawnPoint.position;
         SetVelocity(Vector3.zero);
     }
+
+    tr.position.z = 0;
+    anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+    anim.SetFloat("Jump", velocity.y);
+    anim.SetBool("Grounded", grounded);
+
 }
 
 function FixedUpdate () {
