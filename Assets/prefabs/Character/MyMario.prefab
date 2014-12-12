@@ -1040,9 +1040,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400136}
   - 143: {fileID: 14300000}
+  - 95: {fileID: 9500000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: MyMario
   m_TagString: Untagged
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da93ddd6928094e24bb1f3f665f143d3, type: 3}
+  m_Script: {fileID: 11500000, guid: abe54ccc97ffc384c9ef55c6487fbd91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoRotate: 1
@@ -2036,12 +2036,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab79d7f243824f5d9826bd83522c8df, type: 3}
+  m_Script: {fileID: 11500000, guid: 611682b0cc8de054a992a39008707e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canControl: 1
   useFixedUpdate: 1
-  spawnPoint: {fileID: 0}
   movement:
     maxForwardSpeed: 10
     maxSidewaysSpeed: 10
@@ -2068,19 +2067,19 @@ MonoBehaviour:
       m_PostInfinity: 2
     maxGroundAcceleration: 30
     maxAirAcceleration: 20
-    gravity: 10
-    maxFallSpeed: 20
+    gravity: 50
+    maxFallSpeed: 150
   jumping:
     enabled: 1
     baseHeight: 1
     extraHeight: 4.0999999
-    perpAmount: 0
+    perpAmount: 2
     steepPerpAmount: .5
   movingPlatform:
     enabled: 1
-    movementTransfer: 2
+    movementTransfer: 1
   sliding:
-    enabled: 1
+    enabled: 0
     slidingSpeed: 15
     sidewaysControl: 1
     speedControl: .400000006

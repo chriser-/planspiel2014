@@ -185,23 +185,15 @@ public class CharacterMotor : MonoBehaviour
     public Vector3 groundNormal = Vector3.zero;
 
     private Vector3 lastGroundNormal = Vector3.zero;
-
+    
     private Transform tr;
 
     private CharacterController controller;
-
-    private Animator anim;
-
-    private Transform spawnPoint, lowestPoint;
 
     void Awake()
     {
         controller = GetComponent<CharacterController>();
         tr = transform;
-        anim = GetComponent<Animator>();
-        spawnPoint = GameObject.Find("SpawnPoint").transform;
-        lowestPoint = GameObject.Find("LowestPoint").transform;
-        transform.position = spawnPoint.position;
     }
 
     private void UpdateFunction()
@@ -345,15 +337,7 @@ public class CharacterMotor : MonoBehaviour
             movingPlatform.activeLocalRotation = Quaternion.Inverse(movingPlatform.activePlatform.rotation) * movingPlatform.activeGlobalRotation;
         }
 
-        SetAnimationVars();
         tr.position = new Vector3(tr.position.x, tr.position.y, 0);
-
-        // Reset to SpawnPoint if too low.
-        if (tr.position.y < lowestPoint.position.y)
-        {
-            tr.position = spawnPoint.position;
-            SetVelocity(Vector3.zero);
-        }
     }
 
     void FixedUpdate()
@@ -612,37 +596,37 @@ public class CharacterMotor : MonoBehaviour
         return Mathf.Sqrt(2 * targetJumpHeight * movement.gravity);
     }
 
-    bool IsJumping()
+    public bool IsJumping()
     {
         return jumping.jumping;
     }
 
-    bool IsSliding()
+    public bool IsSliding()
     {
         return (grounded && sliding.enabled && TooSteep());
     }
 
-    bool IsTouchingCeiling()
+    public bool IsTouchingCeiling()
     {
         return (movement.collisionFlags & CollisionFlags.CollidedAbove) != 0;
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         return grounded;
     }
 
-    bool TooSteep()
+    public bool TooSteep()
     {
         return (groundNormal.y <= Mathf.Cos(controller.slopeLimit * Mathf.Deg2Rad));
     }
 
-    Vector3 GetDirection()
+    public Vector3 GetDirection()
     {
         return inputMoveDirection;
     }
 
-    void SetControllable(bool controllable)
+    public void SetControllable(bool controllable)
     {
         canControl = controllable;
     }
@@ -662,7 +646,7 @@ public class CharacterMotor : MonoBehaviour
         }
     }
 
-    void SetVelocity(Vector3 velocity)
+    public void SetVelocity(Vector3 velocity)
     {
         grounded = false;
         movement.velocity = velocity;
@@ -670,10 +654,5 @@ public class CharacterMotor : MonoBehaviour
         SendMessage("OnExternalVelocity");
     }
 
-    void SetAnimationVars()
-    {
-        anim.SetBool("Grounded", IsGrounded());
-        anim.SetFloat("Speed", Mathf.Abs(movement.velocity.x));
-        anim.SetFloat("Jump", movement.velocity.y);
-    }
+
 }

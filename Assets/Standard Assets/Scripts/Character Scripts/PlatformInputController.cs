@@ -14,11 +14,17 @@ public class PlatformInputController : MonoBehaviour
     public float maxRotationSpeed = 360.0f;
 
     private CharacterMotor motor;
+    private Animator anim;
+    private Transform spawnPoint, lowestPoint;
 
     // Use this for initialization
     void Awake()
     {
         motor = GetComponent<CharacterMotor>();
+        anim = GetComponent<Animator>();
+        spawnPoint = GameObject.Find("SpawnPoint").transform;
+        lowestPoint = GameObject.Find("LowestPoint").transform;
+        transform.position = spawnPoint.position;
     }
 
     // Update is called once per frame
@@ -63,6 +69,14 @@ public class PlatformInputController : MonoBehaviour
             newForward = ProjectOntoPlane(newForward, transform.up);
             transform.rotation = Quaternion.LookRotation(newForward, transform.up);
         }
+
+        // Reset to SpawnPoint if too low.
+        if (motor.transform.position.y < lowestPoint.position.y)
+        {
+            motor.transform.position = spawnPoint.position;
+            motor.SetVelocity(Vector3.zero);
+        }
+        SetAnimationVars();
     }
 
     Vector3 ProjectOntoPlane(Vector3 v, Vector3 normal)
@@ -74,5 +88,12 @@ public class PlatformInputController : MonoBehaviour
     {
         float value = Mathf.Min(1, angle / Vector3.Angle(from, to));
         return Vector3.Slerp(from, to, value);
+    }
+
+    void SetAnimationVars()
+    {
+        anim.SetBool("Grounded", motor.IsGrounded());
+        anim.SetFloat("Speed", Mathf.Abs(motor.movement.velocity.x));
+        anim.SetFloat("Jump", motor.movement.velocity.y);
     }
 }
