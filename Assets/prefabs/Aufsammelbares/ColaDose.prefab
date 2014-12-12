@@ -13,7 +13,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Dose
+  m_Name: ColaDose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
