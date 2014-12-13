@@ -202,8 +202,8 @@ Transition:
   m_TransitionDuration: .624999881
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Jump
+  - m_ConditionMode: 1
+    m_ConditionEvent: Grounded
     m_EventTreshold: -2
     m_ExitTime: .375000119
   m_Atomic: 1

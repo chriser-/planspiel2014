@@ -117,6 +117,12 @@ public class CharacterMotor : MonoBehaviour
 
         [System.NonSerialized]
         public Vector3 jumpDir = Vector3.up;
+
+        [System.NonSerialized]
+        public int doubleJump = 0;
+
+        [System.NonSerialized]
+        public bool canDoubleJump = true;
     }
 
     public CharacterMotorJumping jumping = new CharacterMotorJumping();
@@ -651,7 +657,7 @@ public class CharacterMotor : MonoBehaviour
         grounded = false;
         movement.velocity = velocity;
         movement.frameVelocity = Vector3.zero;
-        SendMessage("OnExternalVelocity");
+        SendMessage("OnExternalVelocity", SendMessageOptions.DontRequireReceiver);
     }
 
 

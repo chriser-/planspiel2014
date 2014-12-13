@@ -31,7 +31,10 @@ public class PlatformInputController : MonoBehaviour
     void Update()
     {
         // Get the input vector from kayboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        Vector3 upDownVector = new Vector3(0, Mathf.Max(0,Input.GetAxis("Vertical")), 0);
+        if (upDownVector.sqrMagnitude > 0.01)
+            directionVector = upDownVector;
 
         if (directionVector != Vector3.zero)
         {
@@ -62,13 +65,9 @@ public class PlatformInputController : MonoBehaviour
         motor.inputMoveDirection = directionVector;
         motor.inputJump = Input.GetButton("Jump");
 
-        // Set rotation to the move direction	
-        if (autoRotate && directionVector.sqrMagnitude > 0.01)
-        {
-            Vector3 newForward = ConstantSlerp(transform.forward, directionVector, maxRotationSpeed * Time.deltaTime);
-            newForward = ProjectOntoPlane(newForward, transform.up);
-            transform.rotation = Quaternion.LookRotation(newForward, transform.up);
-        }
+        Vector3 newForward = ConstantSlerp(transform.forward, directionVector, maxRotationSpeed * Time.deltaTime);
+        newForward = ProjectOntoPlane(newForward, transform.up);
+        transform.rotation = Quaternion.LookRotation(newForward, transform.up);
 
         // Reset to SpawnPoint if too low.
         if (motor.transform.position.y < lowestPoint.position.y)
@@ -76,6 +75,8 @@ public class PlatformInputController : MonoBehaviour
             motor.transform.position = spawnPoint.position;
             motor.SetVelocity(Vector3.zero);
         }
+
+        // Set Animation Variables
         SetAnimationVars();
     }
 
