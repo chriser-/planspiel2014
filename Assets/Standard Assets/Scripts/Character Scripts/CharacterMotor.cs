@@ -516,6 +516,16 @@ public class CharacterMotor : MonoBehaviour
         return velocity;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Äste" )
+            {
+                other.gameObject.collider.isTrigger = false;
+
+            }
+    }
+    
+
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.normal.y > 0 && hit.normal.y > groundNormal.y && hit.moveDirection.y < 0)
@@ -528,6 +538,13 @@ public class CharacterMotor : MonoBehaviour
             movingPlatform.hitPlatform = hit.collider.transform;
             movement.hitPoint = hit.point;
             movement.frameVelocity = Vector3.zero;
+
+            //pass through branches
+            if (hit.gameObject.tag == "Äste" && hit.normal == Vector3.up && Input.GetAxis("Vertical") < 0)
+            {
+                hit.gameObject.collider.isTrigger = true;            
+            }
+            
         }
     }
 
@@ -615,6 +632,7 @@ public class CharacterMotor : MonoBehaviour
     public bool IsTouchingCeiling()
     {
         return (movement.collisionFlags & CollisionFlags.CollidedAbove) != 0;
+        
     }
 
     public bool IsGrounded()
