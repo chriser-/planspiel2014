@@ -24,8 +24,16 @@ public class CollectableObject : MonoBehaviour {
         //Destroy(this.gameObject);
     }
 
-    void Banane() {
+    IEnumerator Banane()
+    {
         Debug.Log("Bananenfunktion");
+        coll.gameObject.GetComponent<CharacterMotor>().movement.canClimb = true;
+        yield return new WaitForSeconds(10);
+
+        coll.gameObject.GetComponent<CharacterMotor>().movement.canClimb = false;
+        this.gameObject.renderer.enabled = true;
+        this.gameObject.collider.enabled = true;
+        
         //coll.gameObject.GetComponent<CharacterMotor>().jumping.enabled = false;
     }
 
@@ -35,7 +43,8 @@ public class CollectableObject : MonoBehaviour {
         yield return new WaitForSeconds(10);
 
         coll.gameObject.GetComponent<CharacterMotor>().movement.maxForwardSpeed = 10.0f;
-        Destroy(this.gameObject);
+        this.gameObject.renderer.enabled = true;
+        this.gameObject.collider.enabled = true;
     }
 
     IEnumerator Cheeseburger()
@@ -45,11 +54,15 @@ public class CollectableObject : MonoBehaviour {
         {
             child.gameObject.renderer.enabled = false;
         }
-        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity += 5.0f;
+        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity = 51.0f;
         yield return new WaitForSeconds(10);
 
-        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity -= 5.0f;
-        Destroy(this.gameObject);
+        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity = 50.0f;
+        this.gameObject.collider.enabled = true;
+        foreach (Transform child in this.transform)
+        {
+            child.gameObject.renderer.enabled = true;
+        }
         
     }
 
