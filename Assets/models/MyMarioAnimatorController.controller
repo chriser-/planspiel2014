@@ -379,7 +379,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FallingLanding
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400010, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
