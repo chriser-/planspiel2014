@@ -18,7 +18,8 @@ public class CollectableObject : MonoBehaviour {
         coll = collider;
         Debug.Log("triggerenter: " + this.gameObject.name);
         StartCoroutine(this.gameObject.name);
-        this.gameObject.renderer.enabled = false;
+        if (this.gameObject.renderer != null)
+            this.gameObject.renderer.enabled = false;
         this.gameObject.collider.enabled = false;
         //Destroy(this.gameObject);
     }
@@ -40,6 +41,10 @@ public class CollectableObject : MonoBehaviour {
     IEnumerator Cheeseburger()
     {
         Debug.Log("Cheeseburgerfuntkion");
+        foreach (Transform child in this.transform)
+        {
+            child.gameObject.renderer.enabled = false;
+        }
         coll.gameObject.GetComponent<CharacterMotor>().movement.gravity += 5.0f;
         yield return new WaitForSeconds(10);
 
