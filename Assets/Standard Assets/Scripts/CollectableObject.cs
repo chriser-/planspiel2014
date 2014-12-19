@@ -37,4 +37,15 @@ public class CollectableObject : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+    IEnumerator Cheeseburger()
+    {
+        Debug.Log("Cheeseburgerfuntkion");
+        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity += 5.0f;
+        yield return new WaitForSeconds(10);
+
+        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity -= 5.0f;
+        Destroy(this.gameObject);
+        
+    }
+
 }
