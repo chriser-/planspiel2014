@@ -29,4 +29,4 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
-*.meta
+*.pidb.meta
