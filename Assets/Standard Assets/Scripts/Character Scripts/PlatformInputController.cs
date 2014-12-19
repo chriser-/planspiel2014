@@ -97,4 +97,43 @@ public class PlatformInputController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(motor.movement.velocity.x));
         anim.SetFloat("Jump", motor.movement.velocity.y);
     }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        //pass through branches
+        if (hit.gameObject.tag == "Falltrough" && hit.normal == Vector3.up && Input.GetAxis("Vertical") < 0)
+            hit.gameObject.collider.isTrigger = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Falltrough":
+                other.gameObject.collider.isTrigger = false;
+                break;
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Climb":
+                if (motor.inputMoveDirection.z > 0)
+                    motor.movement.isClimbing = true;
+                else
+                    motor.movement.isClimbing = false;
+                break;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Climb":
+                motor.movement.isClimbing = false;
+                break;
+        }
+    }
 }

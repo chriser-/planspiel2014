@@ -64,6 +64,9 @@ public class CharacterMotor : MonoBehaviour
 
         [System.NonSerialized]
         public Vector3 lastHitPoint = new Vector3(Mathf.Infinity, 0, 0);
+
+        [System.NonSerialized]
+        public bool isClimbing = false;
     }
 
     public CharacterMotorMovement movement = new CharacterMotorMovement();
@@ -243,7 +246,7 @@ public class CharacterMotor : MonoBehaviour
         // Find out how much we need to push towards the ground to avoid loosing grouning
         // when walking down a step or over a sharp change in slope.
         float pushDownOffset = Mathf.Max(controller.stepOffset, new Vector3(currentMovementOffset.x, 0, currentMovementOffset.z).magnitude);
-        if(grounded)
+        if(grounded && !movement.isClimbing)
             currentMovementOffset -= pushDownOffset * Vector3.up;
 
         // Reset variables that will be set by collision function
@@ -301,7 +304,7 @@ public class CharacterMotor : MonoBehaviour
         }
 
         // We were grounded but just loosed grounding
-        if(grounded && !IsGroundedTest())
+        if(grounded && !IsGroundedTest() && !movement.isClimbing)
         {
             grounded = false;
 
@@ -321,7 +324,7 @@ public class CharacterMotor : MonoBehaviour
             tr.position += pushDownOffset * Vector3.up;
         }
         // We were not grounded but just landed on something
-        else if(!grounded && IsGroundedTest())
+        else if(!grounded && IsGroundedTest() && !movement.isClimbing)
         {
             grounded = true;
             jumping.jumping = false;
@@ -447,19 +450,19 @@ public class CharacterMotor : MonoBehaviour
         if(inputJump && jumping.lastButtonDownTime < 0 && canControl)
             jumping.lastButtonDownTime = Time.time;
 
-        if(grounded)
+        if (grounded && !movement.isClimbing)
             velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
-        else
+        else if (!grounded && !movement.isClimbing)
         {
             velocity.y = movement.velocity.y - movement.gravity * Time.deltaTime;
 
             // When jumping up we don't apply gravity for some time when the user is holding the jump button.
             // This gives more control over jump height by pressing the button longer.
-            if(jumping.jumping && jumping.holdingJumpButton)
+            if (jumping.jumping && jumping.holdingJumpButton)
             {
                 // Calculate the duration that the extra jump force should have effect.
                 // ifwe're still less than that duration after the jumping time, apply the force.
-                if(Time.time < jumping.lastStartTime + jumping.extraHeight / CalculateJumpVerticalSpeed(jumping.baseHeight))
+                if (Time.time < jumping.lastStartTime + jumping.extraHeight / CalculateJumpVerticalSpeed(jumping.baseHeight))
                 {
                     // Negate the gravity we just applied, except we push in jumpDir rather than jump upwards.
                     velocity += jumping.jumpDir * movement.gravity * Time.deltaTime;
@@ -470,7 +473,7 @@ public class CharacterMotor : MonoBehaviour
             velocity.y = Mathf.Max(velocity.y, -movement.maxFallSpeed);
         }
 
-        if(grounded)
+        if(grounded && !movement.isClimbing)
         {
             // Jump only ifthe jump button was pressed down in the last 0.2 seconds.
             // We use this check instead of checking ifit's pressed down right now
@@ -512,17 +515,13 @@ public class CharacterMotor : MonoBehaviour
                 jumping.holdingJumpButton = false;
             }
         }
+        else if (movement.isClimbing)
+        {
+            velocity.y = movement.maxForwardSpeed;
+            Debug.Log(velocity);
+        }
 
         return velocity;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Äste" )
-            {
-                other.gameObject.collider.isTrigger = false;
-
-            }
     }
     
 
@@ -538,13 +537,6 @@ public class CharacterMotor : MonoBehaviour
             movingPlatform.hitPlatform = hit.collider.transform;
             movement.hitPoint = hit.point;
             movement.frameVelocity = Vector3.zero;
-
-            //pass through branches
-            if (hit.gameObject.tag == "Äste" && hit.normal == Vector3.up && Input.GetAxis("Vertical") < 0)
-            {
-                hit.gameObject.collider.isTrigger = true;            
-            }
-            
         }
     }
 
