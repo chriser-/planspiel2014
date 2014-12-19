@@ -119,7 +119,7 @@ public class PlatformInputController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Climb":
-                if (motor.inputMoveDirection.z > 0)
+                if (motor.inputMoveDirection.z > 0 && motor.movement.canClimb)
                     motor.movement.isClimbing = true;
                 else
                     motor.movement.isClimbing = false;

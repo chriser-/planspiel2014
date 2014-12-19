@@ -67,6 +67,9 @@ public class CharacterMotor : MonoBehaviour
 
         [System.NonSerialized]
         public bool isClimbing = false;
+
+        [System.NonSerialized]
+        public bool canClimb = false;
     }
 
     public CharacterMotorMovement movement = new CharacterMotorMovement();
