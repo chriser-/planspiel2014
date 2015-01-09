@@ -214,7 +214,7 @@ GameObject:
   - 4: {fileID: 69292701}
   - 33: {fileID: 69292704}
   - 23: {fileID: 69292703}
-  - 136: {fileID: 69292702}
+  - 64: {fileID: 69292702}
   m_Layer: 0
   m_Name: Baumstamm mit Moos1
   m_TagString: Untagged
@@ -234,20 +234,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 115077816}
   m_RootOrder: 4
---- !u!136 &69292702
-CapsuleCollider:
+--- !u!64 &69292702
+MeshCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13600000, guid: 5465602e906a7d8438e2dff9217a5563,
+  m_PrefabParentObject: {fileID: 6400000, guid: 5465602e906a7d8438e2dff9217a5563,
     type: 2}
   m_PrefabInternal: {fileID: 690265785}
   m_GameObject: {fileID: 69292700}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .200000003
-  m_Height: 11
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4a80b622f26913345a6966adfb48be44, type: 3}
 --- !u!23 &69292703
 Renderer:
   m_ObjectHideFlags: 0
@@ -1385,7 +1385,7 @@ GameObject:
   - 23: {fileID: 276030865}
   - 64: {fileID: 276030864}
   m_Layer: 0
-  m_Name: "Bodenst\xFCck1"
+  m_Name: Bodenstueck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4017,7 +4017,7 @@ GameObject:
   - 4: {fileID: 833303106}
   - 33: {fileID: 833303105}
   - 23: {fileID: 833303104}
-  - 136: {fileID: 833303103}
+  - 64: {fileID: 833303103}
   m_Layer: 0
   m_Name: Baumstamm mit Moos1
   m_TagString: Untagged
@@ -4025,20 +4025,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &833303103
-CapsuleCollider:
+--- !u!64 &833303103
+MeshCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13600000, guid: 5465602e906a7d8438e2dff9217a5563,
+  m_PrefabParentObject: {fileID: 6400000, guid: 5465602e906a7d8438e2dff9217a5563,
     type: 2}
   m_PrefabInternal: {fileID: 902066559}
   m_GameObject: {fileID: 833303102}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .200000003
-  m_Height: 11
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4a80b622f26913345a6966adfb48be44, type: 3}
 --- !u!23 &833303104
 Renderer:
   m_ObjectHideFlags: 0
@@ -4961,7 +4961,7 @@ GameObject:
   - 4: {fileID: 982414146}
   - 33: {fileID: 982414145}
   - 23: {fileID: 982414144}
-  - 136: {fileID: 982414143}
+  - 64: {fileID: 982414143}
   m_Layer: 0
   m_Name: Baumstamm mit Moos1
   m_TagString: Untagged
@@ -4969,20 +4969,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &982414143
-CapsuleCollider:
+--- !u!64 &982414143
+MeshCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13600000, guid: 5465602e906a7d8438e2dff9217a5563,
+  m_PrefabParentObject: {fileID: 6400000, guid: 5465602e906a7d8438e2dff9217a5563,
     type: 2}
   m_PrefabInternal: {fileID: 899683708}
   m_GameObject: {fileID: 982414142}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .200000003
-  m_Height: 11
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4a80b622f26913345a6966adfb48be44, type: 3}
 --- !u!23 &982414144
 Renderer:
   m_ObjectHideFlags: 0
@@ -6946,7 +6946,7 @@ GameObject:
   - 23: {fileID: 1343447493}
   - 64: {fileID: 1343447492}
   m_Layer: 0
-  m_Name: "Bodenst\xFCck1"
+  m_Name: Bodenstueck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7483,7 +7483,7 @@ GameObject:
   - 23: {fileID: 1458289499}
   - 64: {fileID: 1458289498}
   m_Layer: 0
-  m_Name: "Bodenst\xFCck1"
+  m_Name: Bodenstueck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8316,7 +8316,7 @@ GameObject:
   - 23: {fileID: 1637703333}
   - 64: {fileID: 1637703332}
   m_Layer: 0
-  m_Name: "Bodenst\xFCck1"
+  m_Name: Bodenstueck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
