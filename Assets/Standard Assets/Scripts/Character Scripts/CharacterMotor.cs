@@ -521,7 +521,6 @@ public class CharacterMotor : MonoBehaviour
         else if (movement.isClimbing)
         {
             velocity.y = movement.maxForwardSpeed;
-            Debug.Log(velocity);
         }
 
         return velocity;

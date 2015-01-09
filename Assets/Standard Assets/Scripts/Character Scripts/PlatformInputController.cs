@@ -12,10 +12,11 @@ public class PlatformInputController : MonoBehaviour
 {
     public bool autoRotate = true;
     public float maxRotationSpeed = 360.0f;
+    public Transform spawnPoint;
 
     private CharacterMotor motor;
     private Animator anim;
-    private Transform spawnPoint, lowestPoint;
+    private Transform lowestPoint;
 
     // Use this for initialization
     void Awake()
@@ -72,10 +73,8 @@ public class PlatformInputController : MonoBehaviour
         // Reset to SpawnPoint if too low.
         if (motor.transform.position.y < lowestPoint.position.y)
         {
-            motor.transform.position = spawnPoint.position;
-            motor.SetVelocity(Vector3.zero);
+            Respawn();
         }
-
         // Set Animation Variables
         SetAnimationVars();
     }
@@ -98,11 +97,37 @@ public class PlatformInputController : MonoBehaviour
         anim.SetFloat("Jump", motor.movement.velocity.y);
     }
 
+    public void Respawn()
+    {
+        motor.transform.position = spawnPoint.position;
+        motor.SetVelocity(Vector3.zero);
+    }
+
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //pass through branches
         if (hit.gameObject.tag == "Falltrough" && hit.normal == Vector3.up && Input.GetAxis("Vertical") < 0)
             hit.gameObject.collider.isTrigger = true;
+
+        /*
+        Rigidbody body = hit.collider.attachedRigidbody;
+		// no rigidbody
+        if (body == null || body.isKinematic)
+            return;
+			
+		// We dont want to push objects below us
+		//if (hit.moveDirection.y < -0.3) 
+		//	return;
+		
+		// Calculate push direction from move direction, 
+		// we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, hit.moveDirection.y, hit.moveDirection.z);
+		// If you know how fast your character is trying to move,
+		// then you can also multiply the push velocity by that.
+		
+		// Apply the push
+		body.velocity = pushDir * 2;
+        */
     }
 
     void OnTriggerEnter(Collider other)
