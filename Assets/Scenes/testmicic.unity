@@ -3700,6 +3700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b61cc562e0787740bd4365b180f2541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bananenZeit: 0
+  dosenZeit: 0
+  burgerZeit: 0
 --- !u!65 &817965726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5122,6 +5125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b61cc562e0787740bd4365b180f2541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bananenZeit: 0
+  dosenZeit: 0
+  burgerZeit: 0
 --- !u!1 &1052527393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,6 +6073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b61cc562e0787740bd4365b180f2541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bananenZeit: 0
+  dosenZeit: 0
+  burgerZeit: 0
 --- !u!136 &1221486545
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10603,6 +10612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b61cc562e0787740bd4365b180f2541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bananenZeit: 0
+  dosenZeit: 0
+  burgerZeit: 0
 --- !u!1001 &2066506642
 Prefab:
   m_ObjectHideFlags: 0

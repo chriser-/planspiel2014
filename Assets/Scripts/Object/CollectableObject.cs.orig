@@ -2,8 +2,11 @@
 using System.Collections;
 
 public class CollectableObject : MonoBehaviour {
+<<<<<<< HEAD:Assets/Scripts/Object/CollectableObject.cs
     private GameObject player;
     private CharacterMotor motor;
+=======
+    private Collider coll;
 
 	public float bananenZeit;
 	public float dosenZeit;
@@ -13,6 +16,7 @@ public class CollectableObject : MonoBehaviour {
 	private Texture bananenTextur;
 	private Texture dosenTextur;
 	private Texture burgerTextur;
+>>>>>>> 1eb6ede840756cfd56607a8dbcd02e3c651f88a1:Assets/Standard Assets/Scripts/CollectableObject.cs
 	// Use this for initialization
 	void Start () {
 		bananenZeit = 0.0f;
@@ -43,7 +47,14 @@ public class CollectableObject : MonoBehaviour {
 
     IEnumerator Banane()
     {
+<<<<<<< HEAD:Assets/Scripts/Object/CollectableObject.cs
         motor.movement.canClimb = true;
+        yield return new WaitForSeconds(10);
+
+        motor.movement.canClimb = false;
+=======
+        Debug.Log("Bananenfunktion");
+        coll.gameObject.GetComponent<CharacterMotor>().movement.canClimb = true;
 		bananenZeit = 10.0f;
 		for (int i = 0; i< 100; i++)
 		{
@@ -51,7 +62,8 @@ public class CollectableObject : MonoBehaviour {
 			bananenZeit -= 0.1f;
 		}
 		bananenZeit = 0.0f;
-        motor.movement.canClimb = false;
+        coll.gameObject.GetComponent<CharacterMotor>().movement.canClimb = false;
+>>>>>>> 1eb6ede840756cfd56607a8dbcd02e3c651f88a1:Assets/Standard Assets/Scripts/CollectableObject.cs
         this.gameObject.renderer.enabled = true;
         this.gameObject.collider.enabled = true;
         
@@ -59,7 +71,12 @@ public class CollectableObject : MonoBehaviour {
     }
 
     IEnumerator ColaDose() {
+<<<<<<< HEAD:Assets/Scripts/Object/CollectableObject.cs
        motor.movement.maxForwardSpeed = 20.0f;
+        yield return new WaitForSeconds(10);
+=======
+        Debug.Log("Colafunktion");
+        coll.gameObject.GetComponent<CharacterMotor>().movement.maxForwardSpeed = 20.0f;
 		dosenZeit = 10.0f;
 		for (int i = 0; i< 100; i++)
 		{
@@ -67,6 +84,7 @@ public class CollectableObject : MonoBehaviour {
 			dosenZeit -= 0.1f;
 		}
 		dosenZeit = 0.0f;
+>>>>>>> 1eb6ede840756cfd56607a8dbcd02e3c651f88a1:Assets/Standard Assets/Scripts/CollectableObject.cs
 
        motor.movement.maxForwardSpeed = 10.0f;
         this.gameObject.renderer.enabled = true;
@@ -79,7 +97,11 @@ public class CollectableObject : MonoBehaviour {
         {
             child.gameObject.renderer.enabled = false;
         }
+<<<<<<< HEAD:Assets/Scripts/Object/CollectableObject.cs
        motor.movement.gravity = 51.0f;
+        yield return new WaitForSeconds(10);
+=======
+        coll.gameObject.GetComponent<CharacterMotor>().movement.gravity = 51.0f;
 		burgerZeit = 10.0f;
 		for (int i = 0; i< 100; i++)
 		{
@@ -87,6 +109,7 @@ public class CollectableObject : MonoBehaviour {
 			burgerZeit -= 0.1f;
 		}
 		burgerZeit = 0.0f;
+>>>>>>> 1eb6ede840756cfd56607a8dbcd02e3c651f88a1:Assets/Standard Assets/Scripts/CollectableObject.cs
 
        motor.movement.gravity = 50.0f;
         this.gameObject.collider.enabled = true;
