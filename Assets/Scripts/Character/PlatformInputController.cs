@@ -33,8 +33,8 @@ public class PlatformInputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get the input vector from kayboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Mathf.Max(0, Input.GetAxis("Vertical")), 0);
+        // Get the input vector from keyboard or analog stick
+        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Mathf.Abs(Input.GetAxis("Vertical")), 0);
         Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
         if (powerUps.HasPowerUp(PowerUp.SugarRush))
@@ -101,13 +101,11 @@ public class PlatformInputController : MonoBehaviour
     void SetAnimationVars()
     {
         anim.SetBool("Grounded", motor.IsGrounded());
-        anim.SetFloat("Speed", Mathf.Abs(motor.movement.velocity.x));
-        anim.SetFloat("Jump", motor.movement.velocity.y);
+        anim.SetFloat("VSpeed", Mathf.Abs(motor.movement.velocity.x));
+        anim.SetFloat("HSpeed", motor.movement.velocity.y);
         anim.SetBool("Climbing", motor.movement.isClimbing);
         if (motor.movement.isClimbing)
-        {
-            anim.speed = Mathf.Abs(motor.movement.velocity.y) / 5f;
-        }
+            anim.speed = Mathf.Abs(motor.movement.velocity.y) / 2f;
         else
             anim.speed = 1;
     }
