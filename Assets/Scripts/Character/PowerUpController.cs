@@ -19,9 +19,7 @@ public struct PowerUpConfig
 
 public class PowerUpController : MonoBehaviour {
 
-    [System.NonSerialized]
-    public Dictionary<PowerUp, float> powerUpTimes = new Dictionary<PowerUp,float>();
-
+    private Dictionary<PowerUp, float> powerUpTimes = new Dictionary<PowerUp,float>();
     private Dictionary<PowerUp, Texture> powerUpTextures = new Dictionary<PowerUp,Texture>();
     private Texture barTexture;
 
@@ -56,6 +54,12 @@ public class PowerUpController : MonoBehaviour {
         yield return null;
     }
 
+    public bool HasPowerUp(PowerUp powerUp)
+    {
+        if (powerUpTimes.ContainsKey(powerUp) && powerUpTimes[powerUp] > 0) return true;
+        return false;
+    }
+
 
     /*
     public IEnumerator Banane()
@@ -73,45 +77,6 @@ public class PowerUpController : MonoBehaviour {
         this.gameObject.collider.enabled = true;
 
         //coll.gameObject.GetComponent<CharacterMotor>().jumping.enabled = false;
-    }
-
-    public IEnumerator ColaDose()
-    {
-        motor.movement.maxForwardSpeed = 20.0f;
-        dosenZeit = 10.0f;
-        for (int i = 0; i < 100; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-            dosenZeit -= 0.1f;
-        }
-        dosenZeit = 0.0f;
-
-        motor.movement.maxForwardSpeed = 10.0f;
-        this.gameObject.renderer.enabled = true;
-        this.gameObject.collider.enabled = true;
-    }
-
-    public IEnumerator Cheeseburger()
-    {
-        foreach (Transform child in this.transform)
-        {
-            child.gameObject.renderer.enabled = false;
-        }
-        motor.movement.gravity = 51.0f;
-        burgerZeit = 10.0f;
-        for (int i = 0; i < 100; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-            burgerZeit -= 0.1f;
-        }
-        burgerZeit = 0.0f;
-
-        motor.movement.gravity = 50.0f;
-        this.gameObject.collider.enabled = true;
-        foreach (Transform child in this.transform)
-        {
-            child.gameObject.renderer.enabled = true;
-        }
     }
     */
 

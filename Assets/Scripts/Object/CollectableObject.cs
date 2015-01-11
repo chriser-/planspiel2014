@@ -26,7 +26,7 @@ public class CollectableObject : MonoBehaviour {
             collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);
 
         //spawn again after delay
-        Invoke("Respawn", 15);
+        Invoke("Respawn", 10); //TODO: what to use here?
 
         gameObject.SetActive(false);
     }

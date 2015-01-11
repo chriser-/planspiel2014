@@ -17,12 +17,14 @@ public class PlatformInputController : MonoBehaviour
     private CharacterMotor motor;
     private Animator anim;
     private Transform lowestPoint;
+    private PowerUpController powerUps;
 
     // Use this for initialization
     void Awake()
     {
         motor = GetComponent<CharacterMotor>();
         anim = GetComponent<Animator>();
+        powerUps = GetComponent<PowerUpController>();
         spawnPoint = GameObject.Find("SpawnPoint").transform;
         lowestPoint = GameObject.Find("LowestPoint").transform;
         transform.position = spawnPoint.position;
@@ -36,6 +38,14 @@ public class PlatformInputController : MonoBehaviour
         Vector3 upDownVector = new Vector3(0, Mathf.Max(0,Input.GetAxis("Vertical")), 0);
         if (upDownVector.sqrMagnitude > 0.01)
             directionVector = upDownVector;
+
+        if (powerUps.HasPowerUp(PowerUp.SugarRush))
+            motor.movement.maxForwardSpeed = 20;
+        else
+            motor.movement.maxForwardSpeed = 10; //TODO: use value from inspector instead of hardcoded
+
+        motor.movement.canClimb = powerUps.HasPowerUp(PowerUp.Climb);
+
 
         if (directionVector != Vector3.zero)
         {
@@ -136,6 +146,9 @@ public class PlatformInputController : MonoBehaviour
         {
             case "Falltrough":
                 other.gameObject.collider.isTrigger = false;
+                break;
+            case "Destroyable":
+                if (powerUps.HasPowerUp(PowerUp.Heavy)) other.gameObject.SendMessage("Destroy", transform.position);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Fallable : MonoBehaviour {
+public class FallableObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
