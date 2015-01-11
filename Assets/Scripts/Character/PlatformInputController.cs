@@ -105,6 +105,7 @@ public class PlatformInputController : MonoBehaviour
         anim.SetBool("Grounded", motor.IsGrounded());
         anim.SetFloat("Speed", Mathf.Abs(motor.movement.velocity.x));
         anim.SetFloat("Jump", motor.movement.velocity.y);
+        anim.SetBool("Climbing", motor.movement.isClimbing);
     }
 
     public void Respawn()
