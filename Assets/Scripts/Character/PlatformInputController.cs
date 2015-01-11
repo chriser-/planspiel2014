@@ -116,7 +116,7 @@ public class PlatformInputController : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //pass through branches
-        if (hit.gameObject.tag == "Falltrough" && hit.normal == Vector3.up && Input.GetAxis("Vertical") < 0)
+        if (hit.gameObject.tag == "Falltrough" && hit.normal.y > 0 && Input.GetAxis("Vertical") < 0)
             hit.gameObject.collider.isTrigger = true;
 
         /*
