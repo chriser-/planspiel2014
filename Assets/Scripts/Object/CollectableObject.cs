@@ -7,27 +7,23 @@ public class CollectableObject : MonoBehaviour {
 
     public PowerUpConfig[] powerUps;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag != "Player") return;
 
-        //start specific powerups
-        foreach(PowerUpConfig p in powerUps)
-            collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);
+        if (powerUps.Length > 0)
+        {
+            float maxTime = 0;
+            //start specific powerups
+            foreach (PowerUpConfig p in powerUps)
+            {
+                collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);
+                if (p.time > maxTime) maxTime = p.time;
+            }
 
-        //spawn again after delay
-        Invoke("Respawn", 10); //TODO: what to use here?
-
+            //spawn again after the longest powerUp is over
+            Invoke("Respawn", maxTime);
+        }
         gameObject.SetActive(false);
     }
 
