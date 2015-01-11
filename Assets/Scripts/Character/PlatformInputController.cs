@@ -154,6 +154,11 @@ public class PlatformInputController : MonoBehaviour
             case "Destroyable":
                 if (powerUps.HasPowerUp(PowerUp.Heavy)) other.gameObject.SendMessage("Destroy", transform.position);
                 break;
+            case "Enemy":
+                Vector3 scale = other.gameObject.transform.localScale;
+                scale.y /= 2f;
+                other.gameObject.transform.localScale = scale;
+                break;
         }
     }
     void OnTriggerStay(Collider other)

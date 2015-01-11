@@ -3,12 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - "\xC4ste"
-  - 
   - Falltrough
-  - 
   - Climb
   - Destroyable
+  - Enemy
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

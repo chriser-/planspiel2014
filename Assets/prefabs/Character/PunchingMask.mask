@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PunchingMask
+  m_Mask: 00000000010000000100000001000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigLBein1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigLBein1/CAT-RigLBein2
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigLBein1/CAT-RigLBein2/CAT-RigLBeinAnkle
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigRBein1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigRBein1/CAT-RigRBein2
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigRBein1/CAT-RigRBein2/CAT-RigRBeinAnkle
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger11
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger11/CAT-RigLArmFinger12
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger11/CAT-RigLArmFinger12/CAT-RigLArmFinger13
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger21
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger21/CAT-RigLArmFinger22
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger21/CAT-RigLArmFinger22/CAT-RigLArmFinger23
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger31
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger31/CAT-RigLArmFinger32
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger31/CAT-RigLArmFinger32/CAT-RigLArmFinger33
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger41
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger41/CAT-RigLArmFinger42
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger41/CAT-RigLArmFinger42/CAT-RigLArmFinger43
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger51
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger51/CAT-RigLArmFinger52
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigLArmCollarbone/CAT-RigLArm1/CAT-RigLArm2/CAT-RigLArmPalm/CAT-RigLArmFinger51/CAT-RigLArmFinger52/CAT-RigLArmFinger53
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger11
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger11/CAT-RigRArmFinger12
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger11/CAT-RigRArmFinger12/CAT-RigRArmFinger13
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger21
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger21/CAT-RigRArmFinger22
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger21/CAT-RigRArmFinger22/CAT-RigRArmFinger23
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger31
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger31/CAT-RigRArmFinger32
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger31/CAT-RigRArmFinger32/CAT-RigRArmFinger33
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger41
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger41/CAT-RigRArmFinger42
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger41/CAT-RigRArmFinger42/CAT-RigRArmFinger43
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger51
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger51/CAT-RigRArmFinger52
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigRArmCollarbone/CAT-RigRArm1/CAT-RigRArm2/CAT-RigRArmPalm/CAT-RigRArmFinger51/CAT-RigRArmFinger52/CAT-RigRArmFinger53
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1/CAT-RigSpine2 1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1/CAT-RigSpine2 1/CAT-RigSpine3 1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1/CAT-RigSpine2 1/CAT-RigSpine3 1/CAT-RigSpine4 1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1/CAT-RigSpine2 1/CAT-RigSpine3 1/CAT-RigSpine4 1/CAT-RigSpine5 1
+    m_Weight: 1
+  - m_Path: CAT-RigPelvis/CAT-RigSpineCAT-RigSpine1/CAT-RigSpine2/CAT-RigSpine3/CAT-RigSpine4/CAT-RigSpine5/CAT-RigShoulders/CAT-RigSpineCAT-RigSpine1
+      1/CAT-RigSpine2 1/CAT-RigSpine3 1/CAT-RigSpine4 1/CAT-RigSpine5 1/CAT-RigHead
+    m_Weight: 1
+  - m_Path: Figur002
+    m_Weight: 1
+  - m_Path: Figur003
+    m_Weight: 1
+  - m_Path: Figur004
+    m_Weight: 1
+  - m_Path: MarioMesh
+    m_Weight: 1
+  - m_Path: MarioMesh/MarioMesh_MeshPart0
+    m_Weight: 1
+  - m_Path: MarioMesh/MarioMesh_MeshPart1
+    m_Weight: 1
+  - m_Path: MarioMesh/MarioMesh_MeshPart2
+    m_Weight: 1
+  - m_Path: MarioMesh/MarioMesh_MeshPart3
+    m_Weight: 1
+  - m_Path: MarioMesh/MarioMesh_MeshPart4
+    m_Weight: 1
