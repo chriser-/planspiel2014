@@ -425,6 +425,12 @@ public class CharacterMotor : MonoBehaviour
         {
             velocityChangeVector = velocityChangeVector.normalized * maxVelocityChange;
         }
+        
+        //Slow down much more when we are grounded and don't want to move
+        if (grounded && desiredVelocity == Vector3.zero)
+        {
+            velocityChangeVector = velocityChangeVector.normalized * (maxVelocityChange * 5);
+        }
         // ifwe're in the air and don't have control, don't apply any velocity change at all.
         // ifwe're on the ground and don't have control we do apply it - it will correspond to friction.
         if(grounded || canControl)

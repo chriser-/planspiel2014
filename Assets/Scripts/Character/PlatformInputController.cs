@@ -34,10 +34,10 @@ public class PlatformInputController : MonoBehaviour
     void Update()
     {
         // Get the input vector from kayboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        Vector3 upDownVector = new Vector3(0, Mathf.Max(0,Input.GetAxis("Vertical")), 0);
-        if (upDownVector.sqrMagnitude > 0.01)
-            directionVector = upDownVector;
+        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Mathf.Max(0, Input.GetAxis("Vertical")), 0);
+        //Vector3 upDownVector = new Vector3(0, Mathf.Max(0,Input.GetAxis("Vertical")), 0);
+        //if (upDownVector.sqrMagnitude > 0.01)
+        //    directionVector = upDownVector;
 
         if (powerUps.HasPowerUp(PowerUp.SugarRush))
             motor.movement.maxForwardSpeed = 20;
