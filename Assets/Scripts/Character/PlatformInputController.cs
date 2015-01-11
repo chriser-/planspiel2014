@@ -35,9 +35,7 @@ public class PlatformInputController : MonoBehaviour
     {
         // Get the input vector from kayboard or analog stick
         Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Mathf.Max(0, Input.GetAxis("Vertical")), 0);
-        //Vector3 upDownVector = new Vector3(0, Mathf.Max(0,Input.GetAxis("Vertical")), 0);
-        //if (upDownVector.sqrMagnitude > 0.01)
-        //    directionVector = upDownVector;
+        Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
         if (powerUps.HasPowerUp(PowerUp.SugarRush))
             motor.movement.maxForwardSpeed = 20;
@@ -73,7 +71,7 @@ public class PlatformInputController : MonoBehaviour
         directionVector = (camToCharacterSpace * directionVector);
 
         // Apply the direction to the CharacterMotor
-        motor.inputMoveDirection = directionVector;
+        motor.inputMoveDirection = inputVector;
         motor.inputJump = Input.GetButton("Jump");
 
         Vector3 newForward = ConstantSlerp(transform.forward, directionVector, maxRotationSpeed * Time.deltaTime);
@@ -106,6 +104,12 @@ public class PlatformInputController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(motor.movement.velocity.x));
         anim.SetFloat("Jump", motor.movement.velocity.y);
         anim.SetBool("Climbing", motor.movement.isClimbing);
+        if (motor.movement.isClimbing)
+        {
+            anim.speed = Mathf.Abs(motor.movement.velocity.y) / 5f;
+        }
+        else
+            anim.speed = 1;
     }
 
     public void Respawn()
@@ -158,10 +162,7 @@ public class PlatformInputController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Climb":
-                if (motor.inputMoveDirection.z > 0 && motor.movement.canClimb)
-                    motor.movement.isClimbing = true;
-                else
-                    motor.movement.isClimbing = false;
+                    motor.movement.isClimbing = motor.movement.canClimb && (motor.movement.isClimbing || motor.inputMoveDirection.y != 0 || !motor.grounded);
                 break;
         }
     }

@@ -405,7 +405,7 @@ public class CharacterMotor : MonoBehaviour
             desiredVelocity *= sliding.slidingSpeed;
         }
         else
-            desiredVelocity = GetDesiredHorizontalVelocity();
+            desiredVelocity = GetDesiredVelocity();
 
         if(movingPlatform.enabled && movingPlatform.movementTransfer == MovementTransferOnJump.PermaTransfer)
         {
@@ -413,9 +413,9 @@ public class CharacterMotor : MonoBehaviour
             desiredVelocity.y = 0;
         }
 
-        if(grounded)
+        if (grounded && !movement.isClimbing)
             desiredVelocity = AdjustGroundVelocityToNormal(desiredVelocity, groundNormal);
-        else
+        else if (!movement.isClimbing)
             velocity.y = 0;
 
         // Enforce max velocity change
@@ -423,15 +423,14 @@ public class CharacterMotor : MonoBehaviour
         Vector3 velocityChangeVector = (desiredVelocity - velocity);
         if(velocityChangeVector.sqrMagnitude > maxVelocityChange * maxVelocityChange)
         {
-            velocityChangeVector = velocityChangeVector.normalized * maxVelocityChange * (grounded ? 3 : 1);
+            velocityChangeVector = velocityChangeVector.normalized * maxVelocityChange * (grounded && desiredVelocity == Vector3.zero ? 3 : 1);
         }
-        Debug.Log(velocityChangeVector);
         // ifwe're in the air and don't have control, don't apply any velocity change at all.
         // ifwe're on the ground and don't have control we do apply it - it will correspond to friction.
         if(grounded || canControl)
             velocity += velocityChangeVector;
 
-        if(grounded)
+        if(grounded && !movement.isClimbing)
         {
             // When going uphill, the CharacterController will automatically move up by the needed amount.
             // Not moving it upwards manually prevent risk of lifting off from the ground.
@@ -439,6 +438,7 @@ public class CharacterMotor : MonoBehaviour
             velocity.y = Mathf.Min(velocity.y, 0);
         }
 
+        //Debug.Log(desiredVelocity + " " + velocity);
         return velocity;
     }
 
@@ -519,10 +519,6 @@ public class CharacterMotor : MonoBehaviour
                 jumping.holdingJumpButton = false;
             }
         }
-        else if (movement.isClimbing)
-        {
-            velocity.y = movement.maxForwardSpeed;
-        }
 
         return velocity;
     }
@@ -573,12 +569,12 @@ public class CharacterMotor : MonoBehaviour
         );
     }
 
-    private Vector3 GetDesiredHorizontalVelocity()
+    private Vector3 GetDesiredVelocity()
     {
         // Find desired velocity
         Vector3 desiredLocalDirection = tr.InverseTransformDirection(inputMoveDirection);
         float maxSpeed = MaxSpeedInDirection(desiredLocalDirection);
-        if(grounded)
+        if(grounded && !movement.isClimbing)
         {
             // Modify max speed on slopes based on slope speed multiplier curve
             var movementSlopeAngle = Mathf.Asin(movement.velocity.normalized.y) * Mathf.Rad2Deg;
@@ -637,7 +633,7 @@ public class CharacterMotor : MonoBehaviour
 
     public bool TooSteep()
     {
-        return (groundNormal.y <= Mathf.Cos(controller.slopeLimit * Mathf.Deg2Rad));
+        return (groundNormal.y <= Mathf.Cos(controller.slopeLimit * Mathf.Deg2Rad) && !movement.isClimbing);
     }
 
     public Vector3 GetDirection()
@@ -658,9 +654,9 @@ public class CharacterMotor : MonoBehaviour
             return 0;
         else
         {
-            float zAxisEllipseMultiplier = (desiredMovementDirection.z > 0 ? movement.maxForwardSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
-            Vector3 temp = new Vector3(desiredMovementDirection.x, 0, desiredMovementDirection.z / zAxisEllipseMultiplier).normalized;
-            float length = new Vector3(temp.x, 0, temp.z * zAxisEllipseMultiplier).magnitude * movement.maxSidewaysSpeed;
+            float zAxisEllipseMultiplier = (desiredMovementDirection.z > 0 || desiredMovementDirection.y > 0 ? movement.maxForwardSpeed : movement.maxBackwardsSpeed) / movement.maxSidewaysSpeed;
+            Vector3 temp = new Vector3(desiredMovementDirection.x, desiredMovementDirection.y, desiredMovementDirection.z / zAxisEllipseMultiplier).normalized;
+            float length = new Vector3(temp.x, temp.y, temp.z * zAxisEllipseMultiplier).magnitude * movement.maxSidewaysSpeed;
             return length;
         }
     }
