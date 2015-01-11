@@ -32,6 +32,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Jumping
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -59,7 +65,7 @@ BlendTree:
     m_IsAnim: 1
     m_Mirror: 0
   - m_Motion: {fileID: 7400006, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
-    m_Threshold: 1
+    m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -68,7 +74,7 @@ BlendTree:
   m_BlendParameter: HSpeed
   m_BlendParameterY: Speed
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 5
   m_UseAutomaticThresholds: 0
   m_BlendType: 0
 --- !u!206 &20649340
@@ -81,7 +87,7 @@ BlendTree:
   - m_Motion: {fileID: 7400002, guid: 38077541363e1ef44b7c4fec7faf6fff, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
-    m_TimeScale: .5
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_IsAnim: 1
     m_Mirror: 0
@@ -165,7 +171,7 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: VSpeed
-    m_EventTreshold: 2
+    m_EventTreshold: 1
     m_ExitTime: .739583313
   m_Atomic: 1
   m_Solo: 0
@@ -213,6 +219,10 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: HSpeed
+    m_EventTreshold: 2
+    m_ExitTime: .431818247
+  - m_ConditionMode: 1
+    m_ConditionEvent: Jumping
     m_EventTreshold: 2
     m_ExitTime: .431818247
   m_Atomic: 1
@@ -283,6 +293,10 @@ Transition:
     m_ConditionEvent: HSpeed
     m_EventTreshold: 2
     m_ExitTime: .739583313
+  - m_ConditionMode: 1
+    m_ConditionEvent: Jumping
+    m_EventTreshold: 2
+    m_ExitTime: .739583313
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -320,7 +334,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: 
+    m_ConditionEvent: Jumping
     m_EventTreshold: 0
     m_ExitTime: .728260875
   m_Atomic: 0
@@ -339,8 +353,8 @@ Transition:
   m_TransitionDuration: .367647022
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
+  - m_ConditionMode: 2
+    m_ConditionEvent: Jumping
     m_EventTreshold: 0
     m_ExitTime: .632352948
   m_Atomic: 1
@@ -440,7 +454,7 @@ State:
   m_Motions:
   - {fileID: 20600000}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 300, y: 204, z: 0}
+  m_Position: {x: 300, y: 216, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -508,18 +522,11 @@ StateMachine:
   - {x: 12, y: -60, z: 0}
   m_OrderedTransitions:
     data:
-      first: {fileID: 110241128}
-      second: []
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110121387}
       - {fileID: 110151050}
       - {fileID: 110110259}
-    data:
-      first: {fileID: 110210789}
-      second:
-      - {fileID: 110189222}
     data:
       first: {fileID: 110200000}
       second:
@@ -534,6 +541,13 @@ StateMachine:
       second:
       - {fileID: 110115731}
       - {fileID: 110178234}
+    data:
+      first: {fileID: 110241128}
+      second: []
+    data:
+      first: {fileID: 110210789}
+      second:
+      - {fileID: 110189222}
     data:
       first: {fileID: 110220278}
       second:

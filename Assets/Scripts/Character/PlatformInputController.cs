@@ -104,6 +104,7 @@ public class PlatformInputController : MonoBehaviour
         anim.SetFloat("VSpeed", Mathf.Abs(motor.movement.velocity.x));
         anim.SetFloat("HSpeed", motor.movement.velocity.y);
         anim.SetBool("Climbing", motor.movement.isClimbing);
+        anim.SetBool("Jumping", motor.IsJumping());
         if (motor.movement.isClimbing)
             anim.speed = Mathf.Abs(motor.movement.velocity.y) / 2f;
         else

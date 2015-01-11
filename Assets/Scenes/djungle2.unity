@@ -5893,6 +5893,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: eb0a75ec5245d5248a94a51daf66cde2, type: 2}
+      propertyPath: autoRotate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb0a75ec5245d5248a94a51daf66cde2, type: 2}
   m_RootGameObject: {fileID: 1969314748}
