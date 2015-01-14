@@ -422,9 +422,7 @@ public class CharacterMotor : MonoBehaviour
         float maxVelocityChange = GetMaxAcceleration(grounded) * Time.deltaTime;
         Vector3 velocityChangeVector = (desiredVelocity - velocity);
         if(velocityChangeVector.sqrMagnitude > maxVelocityChange * maxVelocityChange)
-        {
-            velocityChangeVector = velocityChangeVector.normalized * maxVelocityChange * (grounded && desiredVelocity == Vector3.zero ? 3 : 1);
-        }
+            velocityChangeVector = velocityChangeVector.normalized * maxVelocityChange * (Vector3.Angle(desiredVelocity, velocity) > 90 ? 3 : 1);
         // ifwe're in the air and don't have control, don't apply any velocity change at all.
         // ifwe're on the ground and don't have control we do apply it - it will correspond to friction.
         if(grounded || canControl)
