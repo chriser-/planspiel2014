@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUps:
-  - powerUp: 0
+  - powerUp: 2
     time: 10
 --- !u!136 &13600000
 CapsuleCollider:

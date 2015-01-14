@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUps:
-  - powerUp: 2
+  - powerUp: 1
     time: 10
 --- !u!1001 &100100000
 Prefab:
