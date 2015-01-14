@@ -5,7 +5,7 @@ public class DestroyableObject : MonoBehaviour
 {
     private bool destroyed = false;
 
-    void Destroy(Vector3 position)
+    public void Destroy(Vector3 position)
     {
         if (!destroyed)
         {

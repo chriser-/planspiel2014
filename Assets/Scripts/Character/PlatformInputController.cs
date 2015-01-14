@@ -152,7 +152,7 @@ public class PlatformInputController : MonoBehaviour
                 other.gameObject.collider.isTrigger = false;
                 break;
             case "Destroyable":
-                if (powerUps.HasPowerUp(PowerUp.Heavy)) other.gameObject.SendMessage("Destroy", transform.position);
+                if (powerUps.HasPowerUp(PowerUp.Heavy)) other.gameObject.GetComponent<DestroyableObject>().Destroy(transform.position);
                 break;
             case "Enemy":
                 Vector3 scale = other.gameObject.transform.localScale;
