@@ -1045,6 +1045,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400004}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: MyMario
   m_TagString: Player
@@ -2017,6 +2018,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -2112,6 +2125,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f55f5597df4294ba420b7e1fc3a4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpUiConfig:
+  - powerUp: 0
+    activeImage: {fileID: 0}
+    text: {fileID: 0}
+  - powerUp: 1
+    activeImage: {fileID: 0}
+    text: {fileID: 0}
+  - powerUp: 2
+    activeImage: {fileID: 0}
+    text: {fileID: 0}
+  - powerUp: 3
+    activeImage: {fileID: 0}
+    text: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

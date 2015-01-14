@@ -37,7 +37,7 @@ public class PlatformInputController : MonoBehaviour
         Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Mathf.Abs(Input.GetAxis("Vertical")), 0);
         Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
-        if (powerUps.HasPowerUp(PowerUp.SugarRush))
+        if (powerUps.HasPowerUp(PowerUp.Rush))
             motor.movement.maxForwardSpeed = 20;
         else
             motor.movement.maxForwardSpeed = 10; //TODO: use value from inspector instead of hardcoded
