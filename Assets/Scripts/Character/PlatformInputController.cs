@@ -115,6 +115,7 @@ public class PlatformInputController : MonoBehaviour
     {
         motor.transform.position = spawnPoint.position;
         motor.SetVelocity(Vector3.zero);
+        GetComponent<EventController>().Trigger("OnReset");
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -155,9 +156,7 @@ public class PlatformInputController : MonoBehaviour
                 if (powerUps.HasPowerUp(PowerUp.Heavy)) other.gameObject.GetComponent<DestroyableObject>().Destroy(transform.position);
                 break;
             case "Enemy":
-                Vector3 scale = other.gameObject.transform.localScale;
-                scale.y /= 2f;
-                other.gameObject.transform.localScale = scale;
+                other.gameObject.GetComponent<EnemyController>().JumpedOn();
                 break;
         }
     }

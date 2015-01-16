@@ -49,6 +49,8 @@ public class PowerUpController : MonoBehaviour {
 	void Start () {
         foreach (PowerUpUiConfig c in PowerUpUiConfig)
             powerUpUI.Add(c.powerUp, new pUI { image = c.activeImage, text = c.text });
+
+        EventController.OnReset += Reset;
 	}
 	
 	void FixedUpdate () {
@@ -86,6 +88,18 @@ public class PowerUpController : MonoBehaviour {
         foreach (var item in itemsToRemove)
             powerUps.Remove(item.Key);
 	}
+
+    void Reset()
+    {
+        foreach (var powerUp in powerUps)
+        {
+            PowerUp p = powerUp.Key;
+            float time = powerUp.Value.time;
+            powerUpUI[p].image.fillAmount = 0;
+            powerUpUI[p].text.text = "";
+        }
+        powerUps.Clear();
+    }
 
     public IEnumerator StartPowerUp(PowerUpConfig c)
     {

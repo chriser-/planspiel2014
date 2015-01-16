@@ -1,9 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DestroyableObject : MonoBehaviour
 {
     private bool destroyed = false;
+
+    void Start()
+    {
+
+    }
+
+    void Reset()
+    {
+
+    }
 
     public void Destroy(Vector3 position)
     {

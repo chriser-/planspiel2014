@@ -7,6 +7,11 @@ public class CollectableObject : MonoBehaviour {
 
     public PowerUpConfig[] powerUps;
 
+    void Start()
+    {
+        EventController.OnReset += Reset;
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag != "Player") return;
@@ -25,6 +30,12 @@ public class CollectableObject : MonoBehaviour {
             Invoke("Respawn", maxTime);
         }
         gameObject.SetActive(false);
+    }
+
+    void Reset()
+    {
+        CancelInvoke("Respawn");
+        gameObject.SetActive(true);
     }
 
     void Respawn()
