@@ -4,16 +4,27 @@ using System.Collections.Generic;
 
 public class DestroyableObject : MonoBehaviour
 {
-    private bool destroyed = false;
+    public bool destroyed = false;
+    GameObject copy;
 
     void Start()
     {
-
+        //the copied gameobject is the gameobject we see ingame. the actual one is the dummy.
+        //dont execute start when run with cloned object, or we run into a loop
+        if (gameObject.name.Contains("Clone")) return;
+        gameObject.SetActive(false);
+        copy = (GameObject)Instantiate(gameObject);
+        copy.SetActive(true);
+        EventController.OnReset += Reset;
     }
 
     void Reset()
     {
-
+        if (copy == null)
+        {
+            copy = (GameObject)Instantiate(gameObject);
+            copy.SetActive(true);
+        }
     }
 
     public void Destroy(Vector3 position)
@@ -33,7 +44,8 @@ public class DestroyableObject : MonoBehaviour
     IEnumerator MakeTransparent()
     {
         yield return new WaitForSeconds(2f);
-        foreach (Transform child in gameObject.transform) {
+        foreach (Transform child in gameObject.transform)
+        {
             child.gameObject.renderer.material.shader = Shader.Find("Transparent/Diffuse");
             Color c = child.gameObject.renderer.material.color;
             child.gameObject.renderer.material.color = new Color(c.r, c.g, c.b, 1f);
