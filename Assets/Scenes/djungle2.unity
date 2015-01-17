@@ -1197,6 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c7c27b4a089bd4aa2d477d2babef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyed: 0
 --- !u!136 &203127267
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3391,6 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c7c27b4a089bd4aa2d477d2babef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyed: 0
 --- !u!136 &422074358
 CapsuleCollider:
   m_ObjectHideFlags: 0

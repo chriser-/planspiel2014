@@ -94,7 +94,6 @@ public class PowerUpController : MonoBehaviour {
         foreach (var powerUp in powerUps)
         {
             PowerUp p = powerUp.Key;
-            float time = powerUp.Value.time;
             powerUpUI[p].image.fillAmount = 0;
             powerUpUI[p].text.text = "";
         }
