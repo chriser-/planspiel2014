@@ -247,8 +247,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: -.706706703, y: -.0237830542, z: -.0237830561, w: .706706703}
-  m_LocalPosition: {x: 4.24836302, y: 6.85956192, z: .886808395}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalPosition: {x: -38.1536255, y: -3.08438301, z: 1.21881914}
+  m_LocalScale: {x: .100000009, y: .100000001, z: .100000001}
   m_Children:
   - {fileID: 400020}
   - {fileID: 400018}
@@ -685,6 +685,19 @@ MonoBehaviour:
   powerUps:
   - powerUp: 1
     time: 10
+  nutritionValue:
+    Calories: 313
+    Protein: 15
+    Carbohydrate: 33
+    Sugars: 7
+    Fat:
+      Fat: 14
+      SaturatedFat: 5
+      MonounsaturatedFat: 0
+      PolyunsaturatedFat: 0
+      TransFat: 1
+    Fibre: 1
+    Sodium: .745000005
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

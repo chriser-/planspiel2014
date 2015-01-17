@@ -26,7 +26,9 @@ public class CollectableObject : MonoBehaviour {
                 collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);
                 if (p.time > maxTime) maxTime = p.time;
             }
-
+            //add nutrition value to controller
+            HealthController.currentNutrition += nutritionValue;
+            HealthController.changed = true;
             //spawn again after the longest powerUp is over
             Invoke("Respawn", maxTime);
         }

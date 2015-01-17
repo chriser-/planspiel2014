@@ -10,11 +10,12 @@ public enum Genders
 public class Nutrition {
 
     //http://de.wikipedia.org/wiki/Guideline_Daily_Amount
+    //Get data from http://nutritiondata.self.com/
 
     /// <summary>
-    /// Energie in kcal
+    /// Kalorien in kcal
     /// </summary>
-    public int Energy;
+    public int Calories;
     /// <summary>
     /// Eiweiß in Gramm
     /// </summary>
@@ -40,13 +41,17 @@ public class Nutrition {
         /// </summary>
         public float SaturatedFat;
         /// <summary>
+        /// Einfach ungesättigte Fettsäuren in Gramm
+        /// </summary>
+        public float MonounsaturatedFat;
+        /// <summary>
         /// Mehrfach ungesättigte Fettsäuren in Gramm
         /// </summary>
         public float PolyunsaturatedFat;
         /// <summary>
-        /// Einfach ungesättigte Fettsäuren in Gramm
+        /// Trans-Fettsäuren in Gramm
         /// </summary>
-        public float MonounsaturatedFat;
+        public float TransFat;
     };
 
     public Fat_ Fat;
@@ -59,11 +64,53 @@ public class Nutrition {
     /// </summary>
     public float Sodium;
 
+    public Nutrition()
+    {
+        Fat = new Fat_();
+    }
+
+    public static Nutrition operator +(Nutrition n1, Nutrition n2)
+    {
+        return new Nutrition
+        {
+            Carbohydrate = n1.Carbohydrate + n2.Carbohydrate,
+            Calories = n1.Calories + n2.Calories,
+            Fat = new Fat_
+            {
+                Fat = n1.Fat.Fat + n2.Fat.Fat,
+                MonounsaturatedFat = n1.Fat.MonounsaturatedFat + n2.Fat.MonounsaturatedFat,
+                PolyunsaturatedFat = n1.Fat.PolyunsaturatedFat + n2.Fat.PolyunsaturatedFat,
+                SaturatedFat = n1.Fat.SaturatedFat + n2.Fat.SaturatedFat,
+                TransFat = n1.Fat.TransFat + n2.Fat.TransFat,
+            },
+            Fibre = n1.Fibre + n2.Fibre,
+            Protein = n1.Protein + n2.Protein,
+            Sodium = n1.Sodium + n2.Sodium,
+            Sugars = n1.Sugars + n2.Sugars,
+        };
+    }
+
+    public override string ToString()
+    {
+        return
+            "Kalorien: " + Calories + "kcal" +
+            ", Eiweiß: " + Protein + "g" +
+            ", Kohlenhydrate: " + Carbohydrate + "g" +
+            ", Zucker: " + Sugars + "g" +
+            ", Fett: " + Fat.Fat + "g" +
+            ", Gesättigte Fettsäuren: " + Fat.SaturatedFat + "g" +
+            ", Einfach ungesättigte Fettsäuren: " + Fat.MonounsaturatedFat + "g" +
+            ", Mehrfach ungesättigte Fettsäuren: " + Fat.PolyunsaturatedFat + "g" +
+            ", Trans-Fettsäuren: " + Fat.TransFat + "g" +
+            ", Ballaststoffe: " + Fibre + "g" +
+            ", Sodium: " + Sodium + "g";
+    }
+
 
     //GDA for men
     private static Nutrition MenGDA = new Nutrition
     {
-        Energy = 2500,
+        Calories = 2500,
         Protein = 60f,
         Carbohydrate = 340f,
         Sugars = 110f,
@@ -73,6 +120,7 @@ public class Nutrition {
             SaturatedFat = 30f,
             MonounsaturatedFat = 29f,
             PolyunsaturatedFat = 21f,
+            TransFat = 0f,
         },
         Fibre = 25f,
         Sodium = 2.4f,
@@ -80,7 +128,7 @@ public class Nutrition {
     //GDA for Women
     private static Nutrition WomenGDA = new Nutrition
     {
-        Energy = 2000,
+        Calories = 2000,
         Protein = 50f,
         Carbohydrate = 270f,
         Sugars = 90f,
@@ -90,12 +138,13 @@ public class Nutrition {
             SaturatedFat = 20f,
             MonounsaturatedFat = 34f,
             PolyunsaturatedFat = 16f,
+            TransFat = 0f,
         },
         Fibre = 25f,
         Sodium = 2.4f,
     };
 
-    public static Nutrition GDA
+    public static Nutrition Recommended
     {
         get
         {
