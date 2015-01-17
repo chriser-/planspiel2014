@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         initialScale = transform.localScale;
-        EventController.OnReset += Reset;
+        PlatformInputController.OnReset += Reset;
     }
 
     void Update()

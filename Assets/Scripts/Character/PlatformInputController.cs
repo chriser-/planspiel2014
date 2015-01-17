@@ -19,6 +19,9 @@ public class PlatformInputController : MonoBehaviour
     private Transform lowestPoint;
     private PowerUpController powerUps;
 
+    public delegate void ResetLevel();
+    public static event ResetLevel OnReset;
+
     // Use this for initialization
     void Awake()
     {
@@ -115,7 +118,7 @@ public class PlatformInputController : MonoBehaviour
     {
         motor.transform.position = spawnPoint.position;
         motor.SetVelocity(Vector3.zero);
-        GetComponent<EventController>().Trigger("OnReset");
+        OnReset();
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)

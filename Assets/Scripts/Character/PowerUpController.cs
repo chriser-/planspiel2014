@@ -50,7 +50,7 @@ public class PowerUpController : MonoBehaviour {
         foreach (PowerUpUiConfig c in PowerUpUiConfig)
             powerUpUI.Add(c.powerUp, new pUI { image = c.activeImage, text = c.text });
 
-        EventController.OnReset += Reset;
+        PlatformInputController.OnReset += Reset;
 	}
 	
 	void FixedUpdate () {

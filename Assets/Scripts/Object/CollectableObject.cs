@@ -10,7 +10,7 @@ public class CollectableObject : MonoBehaviour {
 
     void Start()
     {
-        EventController.OnReset += Reset;
+        PlatformInputController.OnReset += Reset;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -27,8 +27,7 @@ public class CollectableObject : MonoBehaviour {
                 if (p.time > maxTime) maxTime = p.time;
             }
             //add nutrition value to controller
-            HealthController.currentNutrition += nutritionValue;
-            HealthController.changed = true;
+            HealthController.addNutrition(nutritionValue);
             //spawn again after the longest powerUp is over
             Invoke("Respawn", maxTime);
         }

@@ -106,6 +106,23 @@ public class Nutrition {
             ", Sodium: " + Sodium + "g";
     }
 
+    public string ToGUIText()
+    {
+        string n = "\r\n";
+        return
+            Calories + "kcal" + n +
+            Protein + "g" + n +
+            Carbohydrate + "g" + n +
+            Sugars + "g" + n +
+            Fat.Fat + "g" + n +
+            Fat.SaturatedFat + "g" + n +
+            Fat.MonounsaturatedFat + "g" + n +
+            Fat.PolyunsaturatedFat + "g" + n +
+            Fat.TransFat + "g" + n +
+            Fibre + "g" + n +
+            Sodium + "g";
+    }
+
 
     //GDA for men
     private static Nutrition MenGDA = new Nutrition

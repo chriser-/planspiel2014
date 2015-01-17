@@ -15,7 +15,7 @@ public class DestroyableObject : MonoBehaviour
         gameObject.SetActive(false);
         copy = (GameObject)Instantiate(gameObject);
         copy.SetActive(true);
-        EventController.OnReset += Reset;
+        PlatformInputController.OnReset += Reset;
     }
 
     void Reset()
