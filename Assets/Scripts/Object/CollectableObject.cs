@@ -6,6 +6,7 @@ public class CollectableObject : MonoBehaviour {
     private CharacterMotor motor;
 
     public PowerUpConfig[] powerUps;
+    public Nutrition nutritionValue;
 
     void Start()
     {
