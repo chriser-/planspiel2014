@@ -41,8 +41,8 @@ public class GUIHandler : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Input.GetKeyDown("mouse 1"))
-			YouWin();
+		//if(Input.GetKeyDown("mouse 1"))
+			//YouWin();
 	}
 	
 
