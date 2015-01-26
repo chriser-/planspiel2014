@@ -4,16 +4,17 @@ using UnityEngine.UI;
 
 public class GUIHandler : MonoBehaviour {
 
-	[SerializeField]
-	private GameObject loseScreen;
-	[SerializeField]
-	private GameObject winScreen;
-	[SerializeField]
-	private GameObject highscore; 
-	[SerializeField]
-	private GameObject indicator;
-	[SerializeField]
-	private GameObject info;
+	private GameObject LosePanel;
+
+	private GameObject WinPanel;
+
+	private GameObject HighscorePanel;
+ 
+	private GameObject TimePanel;
+
+    private GameObject InfoPanel;
+
+    private Text NutritionPanelText;
 
 	// Für die Punktevergabe durch gebrauchte Zeit
 	public float ExpectedDurationMin;
@@ -28,52 +29,55 @@ public class GUIHandler : MonoBehaviour {
 	private float timeNeeded;
 	private bool highscoreInserted;
 
+    void Start()
+    {
+        LosePanel = transform.FindChild("LosePanel").gameObject;
 
-	// Use this for initialization
-	void Start () {
+        WinPanel = transform.FindChild("WinPanel").gameObject;
 
-		gotPoints = 0;
-		timeNeeded = 0f; 
-		highscoreInserted = false;
-		malusResult = 0;
+        HighscorePanel = transform.FindChild("HighscorePanel").gameObject;
 
+        TimePanel = transform.FindChild("TimePanel").gameObject;
+
+        InfoPanel = transform.FindChild("InfoPanel").gameObject;
+
+        NutritionPanelText = transform.FindChild("NutritionPanel").FindChild("Values").gameObject.GetComponent<Text>();
+
+
+        PlatformInputController.OnReset += YouDie;
+    }
+
+    void Update()
+    {
+        if (HealthController.changed)
+            NutritionPanelText.text = HealthController.currentNutrition.ToGUIText();
+    }
 	
-	}
-
-	void Update(){
-		//if(Input.GetKeyDown("mouse 1"))
-			//YouWin();
-	}
-	
-
-
 	public void YouDie()
 	{
 		Time.timeScale = 0f;
-		loseScreen.SetActive(true);
-
-
+        LosePanel.SetActive(true);
 	}
 
 	public void ShowInfo()
 	{
 		Time.timeScale = 0f;
-		info.SetActive(true);
+		InfoPanel.SetActive(true);
 	}
 
 	public void YouWin()
 	{
 		Time.timeScale = 0f;
 
-		Stopuhr stopuhrScript = indicator.GetComponentInChildren<Stopuhr>();
-		winScreen.SetActive(true);
+        StopWatch stopWatch = TimePanel.GetComponentInChildren<StopWatch>();
+        WinPanel.SetActive(true);
 		//Zeit setzten
-		RectTransform zeitValue = (RectTransform) winScreen.transform.FindChild("ZeitValue");
+        RectTransform zeitValue = (RectTransform)WinPanel.transform.FindChild("TimeValue");
 		Text zeitValueTextScript = zeitValue.GetComponent<Text>();
-		zeitValueTextScript.text = stopuhrScript.ZeitAsString;
+		zeitValueTextScript.text = stopWatch.TimeAsString;
 
 		//Nutrition
-		RectTransform nutritionValue = (RectTransform) winScreen.transform.FindChild("NutritionValues");
+        RectTransform nutritionValue = (RectTransform)WinPanel.transform.FindChild("NutritionValues");
 		Text nutritionTextScript = nutritionValue.GetComponent<Text>();
 
 		RectTransform nutritionPanelText = (RectTransform) this.transform.FindChild("NutritionPanel").FindChild("Values");
@@ -99,16 +103,16 @@ public class GUIHandler : MonoBehaviour {
 
 		// Make Malus smaller and negativ, Malus will be applied in DistributePoints()
 		malusResult /= -6; // TO DO: Balancing
-		RectTransform malusValue = (RectTransform) winScreen.transform.FindChild("MalusValue");
+        RectTransform malusValue = (RectTransform)WinPanel.transform.FindChild("MalusValue");
 		Text malusValueTextScript = malusValue.GetComponent<Text>();
 		malusValueTextScript.text = malusResult.ToString();
 
 
 		//Punkte setzten
-		timeNeeded = stopuhrScript.ZeitAsNumber;
+		timeNeeded = stopWatch.TimeAsNumber;
 		gotPoints = DistributePoints(timeNeeded);
-		RectTransform punkteValue = (RectTransform) winScreen.transform.FindChild("PunkteValue");
-		Text punkteValueTextScript = punkteValue.GetComponent<Text>();
+        RectTransform pointsValue = (RectTransform)WinPanel.transform.FindChild("PointsValue");
+		Text punkteValueTextScript = pointsValue.GetComponent<Text>();
 		punkteValueTextScript.text = gotPoints.ToString();
 
 	}
@@ -130,20 +134,20 @@ public class GUIHandler : MonoBehaviour {
 	public void CloseAllScreens()
 	{
 		Time.timeScale = 1f;
-		loseScreen.SetActive(false);
-		winScreen.SetActive(false);
-		highscore.SetActive(false);
-		info.SetActive(false);
+		LosePanel.SetActive(false);
+		WinPanel.SetActive(false);
+		HighscorePanel.SetActive(false);
+		InfoPanel.SetActive(false);
 	}
 
 	public void ShowHighscore()
 	{
 		Time.timeScale = 0f;
-		highscore.SetActive(true);
+        HighscorePanel.SetActive(true);
 
-		RectTransform punkte = (RectTransform) highscore.transform.FindChild("Punkte");
+        RectTransform punkte = (RectTransform)HighscorePanel.transform.FindChild("Points");
 		Text punkteTextScript =  punkte.GetComponent<Text>();
-		punkteTextScript.text = gotPoints.ToString() + " Punkte";
+		punkteTextScript.text = gotPoints.ToString() + " Points";
 
 		string placeholder = "-";
 
@@ -151,7 +155,7 @@ public class GUIHandler : MonoBehaviour {
 
 		for(int i = 1; i < 5; i++)
 		{
-			RectTransform text1 = (RectTransform) highscore.transform.FindChild(i.ToString() + "Text");
+            RectTransform text1 = (RectTransform)HighscorePanel.transform.FindChild(i.ToString() + "Text");
 			Text text1Script =  text1.GetComponent<Text>();
 			if(PlayerPrefs.HasKey("Highscore" + i + "Name"))
 			{
@@ -163,7 +167,7 @@ public class GUIHandler : MonoBehaviour {
 			}
 			text1Script.text = placeholder;
 
-			RectTransform value1 = (RectTransform) highscore.transform.FindChild(i.ToString() + "Value");
+            RectTransform value1 = (RectTransform)HighscorePanel.transform.FindChild(i.ToString() + "Value");
 			Text value1Script =  value1.GetComponent<Text>();
 			if(PlayerPrefs.HasKey("Highscore" + i + "Value"))
 			{
@@ -182,7 +186,7 @@ public class GUIHandler : MonoBehaviour {
 
 	public void AddHighscoreEntry()
 	{
-		RectTransform submit = (RectTransform) highscore.transform.FindChild("InputField").FindChild("Submit");
+        RectTransform submit = (RectTransform)HighscorePanel.transform.FindChild("InputField").FindChild("Submit");
 		Text submitTextScript =  submit.GetComponent<Text>();
 		string playerName = submitTextScript.text;
 
@@ -248,20 +252,10 @@ public class GUIHandler : MonoBehaviour {
 
 	public void ResetGUI()
 	{
-
-		Stopuhr stopuhrScript = indicator.GetComponentInChildren<Stopuhr>();
-		stopuhrScript.ResetStopuhr();
-
-		Start ();
+		StopWatch stopWatch = TimePanel.GetComponentInChildren<StopWatch>();
+        stopWatch.ResetStopuhr();
 
 		CloseAllScreens();
-
-	}
-
-	public void ReloadLevel()
-	{
-
-		Application.LoadLevel(Application.loadedLevelName);
 
 	}
 

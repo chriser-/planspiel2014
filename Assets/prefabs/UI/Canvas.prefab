@@ -11,7 +11,7 @@ GameObject:
   - 222: {fileID: 22200000}
   - 114: {fileID: 11400000}
   m_Layer: 5
-  m_Name: PunkteValue
+  m_Name: PointsValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ GameObject:
   - 222: {fileID: 22200002}
   - 114: {fileID: 11400002}
   m_Layer: 5
-  m_Name: PunkteText
+  m_Name: PointsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ GameObject:
   - 222: {fileID: 22200028}
   - 114: {fileID: 11400038}
   m_Layer: 5
-  m_Name: ZeitValue
+  m_Name: TimeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ GameObject:
   - 222: {fileID: 22200034}
   - 114: {fileID: 11400044}
   m_Layer: 5
-  m_Name: LoosePanel
+  m_Name: LosePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,7 +373,7 @@ GameObject:
   - 222: {fileID: 22200042}
   - 114: {fileID: 11400052}
   m_Layer: 5
-  m_Name: ZeitText
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -614,7 +614,7 @@ GameObject:
   - 222: {fileID: 22200070}
   - 114: {fileID: 11400086}
   m_Layer: 5
-  m_Name: Punkte
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -820,7 +820,7 @@ GameObject:
   - 114: {fileID: 11400114}
   - 114: {fileID: 11400112}
   m_Layer: 5
-  m_Name: Stopuhr
+  m_Name: StopWatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1026,7 +1026,6 @@ GameObject:
   - 224: {fileID: 22400118}
   - 222: {fileID: 22200116}
   - 114: {fileID: 11400144}
-  - 114: {fileID: 11400142}
   m_Layer: 5
   m_Name: Values
   m_TagString: Untagged
@@ -2734,7 +2733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: 00:00.000
 --- !u!114 &11400116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2993,11 +2992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec5b2642555b2c48bf0fabd29fed311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseScreen: {fileID: 100034}
-  winScreen: {fileID: 100054}
-  highscore: {fileID: 100008}
-  indicator: {fileID: 100090}
-  info: {fileID: 100016}
   ExpectedDurationMin: 0
   ExpectedDurationMax: 120
   MinPoints: 0
@@ -3029,17 +3023,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Kalorien:\nEiwei\xDF:\nKohlenhydrate:\nZucker:\nFett:\nGes\xE4ttigt:\nEinfach
     Unges\xE4ttigt:\nMehrfach Unges\xE4ttigt:\nTrans:\nBallaststoffe:\nSodium:\n"
---- !u!114 &11400142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7e1a43b263bb84eabede1e49474532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4326,8 +4309,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30.9749756, y: -30.9750061}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: -50, y: -30.9750061}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22400092
 RectTransform:

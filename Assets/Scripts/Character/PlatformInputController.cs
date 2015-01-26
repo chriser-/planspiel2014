@@ -83,16 +83,7 @@ public class PlatformInputController : MonoBehaviour
 
         // Reset to SpawnPoint if too low.
         if (motor.transform.position.y < lowestPoint.position.y)
-        {
-			// Notify GUI that Player failed
-			GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
-			GUIHandler guiHandlerScript = canvas.GetComponent<GUIHandler>();
-			guiHandlerScript.YouDie();
-
-			//No longer needed Level will be reloaded
-            //Respawn();
-
-        }
+            Respawn();
         // Set Animation Variables
         SetAnimationVars();
     }
@@ -123,9 +114,9 @@ public class PlatformInputController : MonoBehaviour
 
     public void Respawn()
     {
+        OnReset();
         motor.transform.position = spawnPoint.position;
         motor.SetVelocity(Vector3.zero);
-        OnReset();
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
