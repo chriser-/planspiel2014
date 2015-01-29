@@ -61,7 +61,7 @@ public class PowerUpController : MonoBehaviour {
 
     public IEnumerator StartPowerUp(PowerUpConfig c)
     {
-        Debug.Log("PowerUp: " + c.powerUp.ToString("G") + ", Time: " + c.time.ToString());
+        //Debug.Log("PowerUp: " + c.powerUp.ToString("G") + ", Time: " + c.time.ToString());
         if (powerUps.ContainsKey(c.powerUp))
         {
             powerUps[c.powerUp].time += c.time;

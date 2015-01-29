@@ -2,18 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
+//TODO: Leben (anzahl versuche), level neustarten, zu letztem checkpoint, nutrition bei checkpoint
+
 public class GUIHandler : MonoBehaviour {
 
 	private GameObject LosePanel;
-
 	private GameObject WinPanel;
-
 	private GameObject HighscorePanel;
- 
 	private GameObject TimePanel;
-
     private GameObject InfoPanel;
-
     private Text NutritionPanelText;
 
 	// Für die Punktevergabe durch gebrauchte Zeit
@@ -248,15 +245,6 @@ public class GUIHandler : MonoBehaviour {
 	{
 		PlayerPrefs.DeleteAll();
 		Debug.Log ("HighscoreData deleted");
-	}
-
-	public void ResetGUI()
-	{
-		StopWatch stopWatch = TimePanel.GetComponentInChildren<StopWatch>();
-        stopWatch.ResetStopuhr();
-
-		CloseAllScreens();
-
 	}
 
 	public void LoadNextLevel()

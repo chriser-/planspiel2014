@@ -698,6 +698,7 @@ MonoBehaviour:
       TransFat: 1
     Fibre: 1
     Sodium: .745000005
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
