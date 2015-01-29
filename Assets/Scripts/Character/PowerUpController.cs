@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,36 +19,16 @@ public struct PowerUpConfig
     public float time;
 };
 
-[System.Serializable]
-public struct PowerUpUiConfig
+public class pTime
 {
-    public PowerUp powerUp;
-    public Image activeImage;
-    public Text text;
+    public float time;
+    public float maxTime;
 };
 
 public class PowerUpController : MonoBehaviour {
-
-    private class pTime
-    {
-        public float time;
-        public float maxTime;
-    };
-    private class pUI
-    {
-        public Image image;
-        public Text text;
-    };
-
-    private Dictionary<PowerUp, pTime> powerUps = new Dictionary<PowerUp, pTime>();
-    private Dictionary<PowerUp, pUI> powerUpUI = new Dictionary<PowerUp, pUI>();
-
-    public PowerUpUiConfig[] PowerUpUiConfig;
-
+    public static Dictionary<PowerUp, pTime> powerUps = new Dictionary<PowerUp, pTime>();
+    
 	void Start () {
-        foreach (PowerUpUiConfig c in PowerUpUiConfig)
-            powerUpUI.Add(c.powerUp, new pUI { image = c.activeImage, text = c.text });
-
         PlatformInputController.OnReset += Reset;
 	}
 	
@@ -66,22 +45,7 @@ public class PowerUpController : MonoBehaviour {
         foreach (var p in powerUps.Keys.ToArray())
             powerUps[p].time -= Time.fixedDeltaTime;
 
-        //show on UI
-        foreach (var powerUp in powerUps)
-        {
-            PowerUp p = powerUp.Key;
-            float time = powerUp.Value.time;
-            if (time <= 0)
-            {
-                powerUpUI[p].image.fillAmount = 0;
-                powerUpUI[p].text.text = "";
-            }
-            else
-            {
-                powerUpUI[p].image.fillAmount = time / powerUps[p].maxTime;
-                powerUpUI[p].text.text = string.Format("{0:0.#}",time);
-            }
-        }
+
 
         //remove from dict where time <= 0
         var itemsToRemove = powerUps.Where(f => f.Value.time <= 0).ToArray();
@@ -91,12 +55,7 @@ public class PowerUpController : MonoBehaviour {
 
     void Reset()
     {
-        foreach (var powerUp in powerUps)
-        {
-            PowerUp p = powerUp.Key;
-            powerUpUI[p].image.fillAmount = 0;
-            powerUpUI[p].text.text = "";
-        }
+
         powerUps.Clear();
     }
 

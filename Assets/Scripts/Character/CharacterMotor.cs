@@ -277,7 +277,10 @@ public class CharacterMotor : MonoBehaviour
         // Calculate the velocity based on the current and previous position.  
         // This means our velocity will only be the amount the character actually moved as a result of collisions.
         Vector3 oldHVelocity = new Vector3(velocity.x, 0, velocity.z);
-        movement.velocity = (tr.position - lastPosition) / Time.deltaTime;
+        if (Time.timeScale > 0)
+            movement.velocity = (tr.position - lastPosition) / Time.deltaTime;
+        else
+            movement.velocity = Vector3.zero;
         Vector3 newHVelocity = new Vector3(movement.velocity.x, 0, movement.velocity.z);
 
         // The CharacterController can be moved in unwanted directions when colliding with things.
@@ -363,11 +366,15 @@ public class CharacterMotor : MonoBehaviour
                 if(!movingPlatform.newPlatform)
                 {
                     // unused: Vector3 lastVelocity = movingPlatform.platformVelocity;
-
-                    movingPlatform.platformVelocity = (
-                        movingPlatform.activePlatform.localToWorldMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)
-                        - movingPlatform.lastMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)
-                    ) / Time.deltaTime;
+                    if (Time.timeScale > 0)
+                    {
+                        movingPlatform.platformVelocity = (
+                            movingPlatform.activePlatform.localToWorldMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)
+                            - movingPlatform.lastMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)
+                        ) / Time.deltaTime;
+                    }
+                    else
+                        movingPlatform.platformVelocity = Vector3.zero;
                 }
                 movingPlatform.lastMatrix = movingPlatform.activePlatform.localToWorldMatrix;
                 movingPlatform.newPlatform = false;
@@ -471,7 +478,7 @@ public class CharacterMotor : MonoBehaviour
                     // Negate the gravity we just applied, except we push in jumpDir rather than jump upwards.
                     velocity += jumping.jumpDir * movement.gravity * Time.deltaTime;
                 }
-            }
+            }   
 
             // Make sure we don't fall any faster than maxFallSpeed. This gives our character a terminal velocity.
             velocity.y = Mathf.Max(velocity.y, -movement.maxFallSpeed);
