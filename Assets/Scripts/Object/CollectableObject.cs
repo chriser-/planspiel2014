@@ -8,6 +8,8 @@ public class CollectableObject : MonoBehaviour {
     public PowerUpConfig[] powerUps;
     public Nutrition nutritionValue;
 
+    public AudioClip nom;
+
     void Start()
     {
         PlatformInputController.OnReset += Reset;
@@ -17,13 +19,17 @@ public class CollectableObject : MonoBehaviour {
     {
         if (collider.gameObject.tag != "Player") return;
 
+        
         if (powerUps.Length > 0)
         {
+            
             float maxTime = 0;
             //start specific powerups
             foreach (PowerUpConfig p in powerUps)
             {
+                audio.PlayOneShot(nom);
                 collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);
+                
                 if (p.time > maxTime) maxTime = p.time;
             }
             //add nutrition value to controller
