@@ -258,4 +258,11 @@ public class GUIHandler : MonoBehaviour {
         PlatformInputController.flushEvents();
 		Application.LoadLevel(nextLevelID);
 	}
+
+	public void ReloadLevel()
+	{
+		int nextLevelID = Application.loadedLevel;
+		PlatformInputController.flushEvents();
+		Application.LoadLevel(nextLevelID);
+	}
 }
