@@ -11,6 +11,7 @@ public class DestroyableObject : MonoBehaviour
     {
         //the copied gameobject is the gameobject we see ingame. the actual one is the dummy.
         //dont execute start when run with cloned object, or we run into a loop
+        Debug.Log("DestroyableObject Start");
         if (gameObject.name.Contains("Clone")) return;
         gameObject.SetActive(false);
         copy = (GameObject)Instantiate(gameObject);

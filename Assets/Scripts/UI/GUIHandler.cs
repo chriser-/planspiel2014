@@ -250,6 +250,7 @@ public class GUIHandler : MonoBehaviour {
 	public void LoadNextLevel()
 	{
 		int nextLevelID = Application.loadedLevel + 1;
+        PlatformInputController.flushEvents();
 		Application.LoadLevel(nextLevelID);
 	}
 }

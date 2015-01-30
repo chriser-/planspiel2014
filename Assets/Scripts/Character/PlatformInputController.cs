@@ -36,6 +36,12 @@ public class PlatformInputController : MonoBehaviour
         lowestPoint = GameObject.Find("LowestPoint").transform;
         transform.position = spawnPoint.position;
         respawnRunning = false;
+        Debug.Log(lowestPoint);
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+        lowestPoint = GameObject.Find("LowestPoint").transform;
     }
 
     // Update is called once per frame
@@ -200,5 +206,10 @@ public class PlatformInputController : MonoBehaviour
     void OnJump()
     {
         audio.PlayOneShot(jump);
+    }
+
+    public static void flushEvents()
+    {
+        OnReset = null;
     }
 }
