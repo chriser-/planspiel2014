@@ -25,7 +25,7 @@ public class CollectableObject : MonoBehaviour {
             
             float maxTime = 0;
             //start specific powerups
-            collider.gameObject.audio.PlayOneShot(nom);
+            collider.gameObject.audio.PlayOneShot(nom,1.5F);
             foreach (PowerUpConfig p in powerUps)
             {
                 collider.gameObject.GetComponent<PowerUpController>().StartCoroutine("StartPowerUp", p);

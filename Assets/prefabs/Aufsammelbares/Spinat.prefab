@@ -157,6 +157,20 @@ MonoBehaviour:
   powerUps:
   - powerUp: 3
     time: 10
+  nutritionValue:
+    Calories: 0
+    Protein: 0
+    Carbohydrate: 0
+    Sugars: 0
+    Fat:
+      Fat: 0
+      SaturatedFat: 0
+      MonounsaturatedFat: 0
+      PolyunsaturatedFat: 0
+      TransFat: 0
+    Fibre: 0
+    Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

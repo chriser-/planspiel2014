@@ -4998,7 +4998,7 @@ GameObject:
   - 222: {fileID: 520269618}
   - 114: {fileID: 520269617}
   m_Layer: 5
-  m_Name: PunkteValue
+  m_Name: PointsValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7573,11 +7573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec5b2642555b2c48bf0fabd29fed311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseScreen: {fileID: 1149240528}
-  winScreen: {fileID: 873886574}
-  highscore: {fileID: 186700320}
-  indicator: {fileID: 1730628109}
-  info: {fileID: 462469648}
   ExpectedDurationMin: 0
   ExpectedDurationMax: 120
   MinPoints: 0
@@ -7594,7 +7589,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -7811,6 +7805,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 3
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!1 &659274432
 GameObject:
   m_ObjectHideFlags: 0
@@ -9490,6 +9485,7 @@ GameObject:
   - 81: {fileID: 821215067}
   - 114: {fileID: 821215072}
   - 45: {fileID: 821215073}
+  - 82: {fileID: 821215074}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9583,6 +9579,64 @@ Skybox:
   m_GameObject: {fileID: 821215066}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: d4d16ca3d56fb7142a32d49bbd323836, type: 2}
+--- !u!82 &821215074
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821215066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 908f5f3393374e847abbca917525970b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .0500000007
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &821961045
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,7 +9920,7 @@ GameObject:
   - 222: {fileID: 857094445}
   - 114: {fileID: 857094444}
   m_Layer: 5
-  m_Name: ZeitText
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11304,6 +11358,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!1 &1014350362
 GameObject:
   m_ObjectHideFlags: 0
@@ -11314,6 +11369,7 @@ GameObject:
   - 224: {fileID: 1014350363}
   - 222: {fileID: 1014350365}
   - 114: {fileID: 1014350364}
+  - 114: {fileID: 1014350366}
   m_Layer: 5
   m_Name: PowerUpPanel
   m_TagString: Untagged
@@ -11380,6 +11436,31 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1997707072}
   m_GameObject: {fileID: 1014350362}
+--- !u!114 &1014350366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400148, guid: 3fae5089ac0ef0543a6cdc154ff5dd80,
+    type: 2}
+  m_PrefabInternal: {fileID: 1997707072}
+  m_GameObject: {fileID: 1014350362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794382dde8b1fd8458be3f4282b7edce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpUiConfig:
+  - powerUp: 0
+    activeImage: {fileID: 1895061434}
+    text: {fileID: 2359011}
+  - powerUp: 1
+    activeImage: {fileID: 1800277008}
+    text: {fileID: 653055348}
+  - powerUp: 2
+    activeImage: {fileID: 1159864826}
+    text: {fileID: 1726978744}
+  - powerUp: 3
+    activeImage: {fileID: 716936164}
+    text: {fileID: 73950884}
 --- !u!1 &1018124628
 GameObject:
   m_ObjectHideFlags: 0
@@ -12406,7 +12487,7 @@ GameObject:
   - 222: {fileID: 1148156955}
   - 114: {fileID: 1148156954}
   m_Layer: 5
-  m_Name: ZeitValue
+  m_Name: TimeValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12544,7 +12625,7 @@ GameObject:
   - 222: {fileID: 1149240531}
   - 114: {fileID: 1149240530}
   m_Layer: 5
-  m_Name: LoosePanel
+  m_Name: LosePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13216,7 +13297,7 @@ GameObject:
   - 222: {fileID: 1217511241}
   - 114: {fileID: 1217511240}
   m_Layer: 5
-  m_Name: PunkteText
+  m_Name: PointsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13483,6 +13564,7 @@ MonoBehaviour:
       TransFat: 1
     Fibre: 1
     Sodium: .745000005
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!65 &1245585144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14042,7 +14124,7 @@ GameObject:
   - 222: {fileID: 1320558642}
   - 114: {fileID: 1320558641}
   m_Layer: 5
-  m_Name: Punkte
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15601,6 +15683,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &1510209681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17398,7 +17481,7 @@ GameObject:
   - 114: {fileID: 1727088246}
   - 114: {fileID: 1727088245}
   m_Layer: 5
-  m_Name: Stopuhr
+  m_Name: StopWatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17461,7 +17544,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: 00:00.000
 --- !u!222 &1727088247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17502,8 +17585,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30.9749756, y: -30.9750061}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: -50, y: -30.9750061}
+  m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1730628111
 MonoBehaviour:
@@ -17708,7 +17791,6 @@ GameObject:
   - 224: {fileID: 1737796701}
   - 222: {fileID: 1737796704}
   - 114: {fileID: 1737796703}
-  - 114: {fileID: 1737796702}
   m_Layer: 5
   m_Name: Values
   m_TagString: Untagged
@@ -17734,18 +17816,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.5, y: -1}
   m_SizeDelta: {x: -5, y: -2}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1737796702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400142, guid: 3fae5089ac0ef0543a6cdc154ff5dd80,
-    type: 2}
-  m_PrefabInternal: {fileID: 1997707072}
-  m_GameObject: {fileID: 1737796700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7e1a43b263bb84eabede1e49474532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1737796703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20148,6 +20218,7 @@ GameObject:
   - 114: {fileID: 1969314755}
   - 65: {fileID: 1969314756}
   - 114: {fileID: 1969314758}
+  - 82: {fileID: 1969314757}
   m_Layer: 0
   m_Name: MyMario
   m_TagString: Player
@@ -20215,6 +20286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611682b0cc8de054a992a39008707e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 0aa3da4a3c6a5f84c945cd0e1a01023e, type: 3}
   canControl: 1
   useFixedUpdate: 0
   movement:
@@ -20302,19 +20374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f55f5597df4294ba420b7e1fc3a4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpUiConfig:
-  - powerUp: 0
-    activeImage: {fileID: 1895061434}
-    text: {fileID: 2359011}
-  - powerUp: 1
-    activeImage: {fileID: 1800277008}
-    text: {fileID: 653055348}
-  - powerUp: 2
-    activeImage: {fileID: 1159864826}
-    text: {fileID: 1726978744}
-  - powerUp: 3
-    activeImage: {fileID: 716936164}
-    text: {fileID: 73950884}
 --- !u!65 &1969314756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20328,6 +20387,65 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .5, y: .5, z: .5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1969314757
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: eb0a75ec5245d5248a94a51daf66cde2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1934028450}
+  m_GameObject: {fileID: 1969314748}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1969314758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21274,6 +21392,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 3
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!1001 &2061079241
 Prefab:
   m_ObjectHideFlags: 0

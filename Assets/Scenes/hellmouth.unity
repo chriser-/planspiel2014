@@ -258,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 70
 --- !u!1001 &25213080
 Prefab:
   m_ObjectHideFlags: 0
@@ -1359,7 +1359,7 @@ Transform:
   - {fileID: 1167861350}
   - {fileID: 1243866470}
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 72
 --- !u!1 &115226579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 73
+  m_RootOrder: 71
 --- !u!1 &116346019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1921,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &156721325
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4974,6 +4975,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 3
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &403596973
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7335,7 +7337,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_RootOrder: 67
 --- !u!1 &570022353
 GameObject:
   m_ObjectHideFlags: 0
@@ -11202,6 +11204,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 3
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &766259796
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11887,6 +11890,7 @@ GameObject:
   - 81: {fileID: 821215067}
   - 114: {fileID: 821215072}
   - 45: {fileID: 821215073}
+  - 82: {fileID: 821215074}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11958,7 +11962,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 73
 --- !u!114 &821215072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11980,6 +11984,64 @@ Skybox:
   m_GameObject: {fileID: 821215066}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: d4d16ca3d56fb7142a32d49bbd323836, type: 2}
+--- !u!82 &821215074
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821215066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 41e4d463d1b465242a23992d16d08395, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .100000001
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &821961045
 GameObject:
   m_ObjectHideFlags: 0
@@ -13998,6 +14060,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &951085443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18474,7 +18537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 66
 --- !u!1001 &1320687688
 Prefab:
   m_ObjectHideFlags: 0
@@ -22643,6 +22706,7 @@ MonoBehaviour:
       TransFat: 1
     Fibre: 1
     Sodium: .745000005
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!65 &1611003106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23562,6 +23626,7 @@ MonoBehaviour:
       TransFat: 1
     Fibre: 1
     Sodium: .745000005
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!65 &1678815823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26098,7 +26163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 69
 --- !u!1 &1887355685
 GameObject:
   m_ObjectHideFlags: 0
@@ -26798,6 +26863,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 3
     Sodium: 0
+  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
 --- !u!136 &1931298179
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27510,9 +27576,11 @@ GameObject:
   - 95: {fileID: 1969314750}
   - 114: {fileID: 1969314752}
   - 114: {fileID: 1969314751}
+  - 54: {fileID: 1969314757}
   - 114: {fileID: 1969314755}
   - 65: {fileID: 1969314756}
   - 114: {fileID: 1969314758}
+  - 82: {fileID: 1969314754}
   m_Layer: 0
   m_Name: MyMario
   m_TagString: Player
@@ -27580,6 +27648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611682b0cc8de054a992a39008707e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 0aa3da4a3c6a5f84c945cd0e1a01023e, type: 3}
   canControl: 1
   useFixedUpdate: 0
   movement:
@@ -27639,6 +27708,65 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!82 &1969314754
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: eb0a75ec5245d5248a94a51daf66cde2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1484603157}
+  m_GameObject: {fileID: 1969314748}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1969314755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27664,6 +27792,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .5, y: .5, z: .5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1969314757
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: eb0a75ec5245d5248a94a51daf66cde2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1484603157}
+  m_GameObject: {fileID: 1969314748}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1969314758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27967,7 +28111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 68
 --- !u!1 &1996178478
 GameObject:
   m_ObjectHideFlags: 0
