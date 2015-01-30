@@ -4,6 +4,7 @@ using System.Collections;
 public class HealthController : MonoBehaviour {
 
     public static Nutrition currentNutrition = new Nutrition();
+    public static Nutrition lastNutrition = new Nutrition();
     public static bool changed = false;
 
 	// Use this for initialization
@@ -19,7 +20,8 @@ public class HealthController : MonoBehaviour {
 
     void Reset()
     {
-        currentNutrition = new Nutrition();
+        currentNutrition = lastNutrition;
+        changed = true;
     }
 
     public static void addNutrition(Nutrition n)

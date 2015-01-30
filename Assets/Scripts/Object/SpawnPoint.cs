@@ -8,6 +8,7 @@ public class SpawnPoint : MonoBehaviour {
         if (collider.gameObject.tag == "Player")
         {
             collider.gameObject.GetComponent<PlatformInputController>().spawnPoint = transform;
+            HealthController.lastNutrition = HealthController.currentNutrition;
         }
     }
 }

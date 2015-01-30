@@ -4953,7 +4953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {x: 53, y: -8, z: 0}
-  endPoint: {x: 66.4000015, y: -8, z: 0}
+  endPoint: {x: 65, y: -8, z: 0}
   platformSpeed: 5
 --- !u!64 &485587778
 MeshCollider:
@@ -17280,6 +17280,14 @@ Prefab:
     - target: {fileID: 22400114, guid: 3fae5089ac0ef0543a6cdc154ff5dd80, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400072, guid: 3fae5089ac0ef0543a6cdc154ff5dd80, type: 2}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400072, guid: 3fae5089ac0ef0543a6cdc154ff5dd80, type: 2}
+      propertyPath: m_FillCenter
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fae5089ac0ef0543a6cdc154ff5dd80, type: 2}
