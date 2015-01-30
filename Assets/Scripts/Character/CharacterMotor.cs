@@ -5,11 +5,9 @@ using System.Collections.Generic;
 // Require a character controller to be attached to the same game object
 [RequireComponent(typeof(CharacterController))]
 [AddComponentMenu("Character/Character Motor")]
-[RequireComponent(typeof(AudioSource))]
 
 public class CharacterMotor : MonoBehaviour
 {
-    public AudioClip jump;
 
     // Does this script currently respond to input?
     public bool canControl = true;
@@ -520,7 +518,6 @@ public class CharacterMotor : MonoBehaviour
                 }
 
                 SendMessage("OnJump", SendMessageOptions.DontRequireReceiver);
-                audio.PlayOneShot(jump);
             }
             else
             {

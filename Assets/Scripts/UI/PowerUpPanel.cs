@@ -42,7 +42,7 @@ public class PowerUpPanel : MonoBehaviour {
             float maxTime = powerUp.Value.maxTime;
             if (time <= 0)
             {
-                powerUpUI[p].image.fillAmount = 0;
+                powerUpUI[p].image.fillAmount = 0;  
                 powerUpUI[p].text.text = "";
             }
             else

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 // Require a character controller to be attached to the same game object
 [RequireComponent(typeof(CharacterMotor))]
 [AddComponentMenu("Character/Platform Input Controller")]
+[RequireComponent(typeof(AudioSource))]
 
 
 // This makes the character turn to face the current movement speed per default.
@@ -12,11 +13,12 @@ public class PlatformInputController : MonoBehaviour
 {
     public bool autoRotate = true;
     public float maxRotationSpeed = 360.0f;
-    public Transform spawnPoint;
+    public AudioClip jump;
 
     private CharacterMotor motor;
     private Animator anim;
     private Transform lowestPoint;
+    public Transform spawnPoint;
     private PowerUpController powerUps;
 
     public delegate void ResetLevel();
@@ -83,7 +85,7 @@ public class PlatformInputController : MonoBehaviour
 
         // Reset to SpawnPoint if too low.
         if (motor.transform.position.y < lowestPoint.position.y)
-            Respawn();
+            StartCoroutine(Respawn());
         // Set Animation Variables
         SetAnimationVars();
     }
@@ -112,11 +114,18 @@ public class PlatformInputController : MonoBehaviour
             anim.speed = 1;
     }
 
-    public void Respawn()
+    public IEnumerator Respawn()
     {
+        motor.canControl = false;
+        //audio.PlayOneShot();
+        while (audio.isPlaying)
+        {
+            yield return new WaitForFixedUpdate();
+        }
         OnReset();
         motor.transform.position = spawnPoint.position;
         motor.SetVelocity(Vector3.zero);
+        motor.canControl = true;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -179,5 +188,10 @@ public class PlatformInputController : MonoBehaviour
                 motor.movement.isClimbing = false;
                 break;
         }
+    }
+
+    void OnJump()
+    {
+        audio.PlayOneShot(jump);
     }
 }
