@@ -535,19 +535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 645007990}
-        m_MethodName: ResetGUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 645007990}
-        m_MethodName: ReloadLevel
+        m_MethodName: CloseAllScreens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1632,9 +1620,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4e9a68eff4c65d74cb386fe5be0b1cfb, type: 3}
-  m_Type: 0
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4384,9 +4372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4e9a68eff4c65d74cb386fe5be0b1cfb, type: 3}
-  m_Type: 0
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4847,19 +4835,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 645007990}
-        m_MethodName: ResetGUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 645007990}
-        m_MethodName: ReloadLevel
+        m_MethodName: CloseAllScreens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10152,9 +10128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4e9a68eff4c65d74cb386fe5be0b1cfb, type: 3}
-  m_Type: 0
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11038,7 +11014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &964513316
 Transform:
   m_ObjectHideFlags: 0
@@ -11358,7 +11334,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
-  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
+  nom: {fileID: 8300000, guid: 2b69197cf8e8e4d4b84fea805dfdb586, type: 3}
 --- !u!1 &1014350362
 GameObject:
   m_ObjectHideFlags: 0
@@ -12422,7 +12398,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 645007990}
-        m_MethodName: ResetGUI
+        m_MethodName: CloseAllScreens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12664,9 +12640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4e9a68eff4c65d74cb386fe5be0b1cfb, type: 3}
-  m_Type: 0
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -15683,7 +15659,7 @@ MonoBehaviour:
       TransFat: 0
     Fibre: 0
     Sodium: 0
-  nom: {fileID: 8300000, guid: a2d559723f884fe46aa0fc7c6c968ed5, type: 3}
+  nom: {fileID: 8300000, guid: 2b69197cf8e8e4d4b84fea805dfdb586, type: 3}
 --- !u!136 &1510209681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17601,9 +17577,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4e9a68eff4c65d74cb386fe5be0b1cfb, type: 3}
-  m_Type: 0
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -19467,7 +19443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
+  m_Color: {r: 0, g: .678431392, b: 1, a: 1}
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -20273,7 +20249,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRotate: 1
   maxRotationSpeed: 360
+  jump: {fileID: 8300000, guid: 0aa3da4a3c6a5f84c945cd0e1a01023e, type: 3}
   spawnPoint: {fileID: 0}
+  fall: {fileID: 8300000, guid: f0bf48bf18a9ea64ba818b0f2a88ce67, type: 3}
 --- !u!114 &1969314752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20286,7 +20264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611682b0cc8de054a992a39008707e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {fileID: 8300000, guid: 0aa3da4a3c6a5f84c945cd0e1a01023e, type: 3}
   canControl: 1
   useFixedUpdate: 0
   movement:
