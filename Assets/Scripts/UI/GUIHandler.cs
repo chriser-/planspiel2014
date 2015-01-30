@@ -108,6 +108,11 @@ public class GUIHandler : MonoBehaviour {
 		//Punkte setzten
 		timeNeeded = stopWatch.TimeAsNumber;
 		gotPoints = DistributePoints(timeNeeded);
+
+		//Punkte kleiner MinPoints vermeiden
+		if(gotPoints < MinPoints)
+			gotPoints = MinPoints;
+
         RectTransform pointsValue = (RectTransform)WinPanel.transform.FindChild("PointsValue");
 		Text punkteValueTextScript = pointsValue.GetComponent<Text>();
 		punkteValueTextScript.text = gotPoints.ToString();
@@ -251,6 +256,13 @@ public class GUIHandler : MonoBehaviour {
 	{
 		int nextLevelID = Application.loadedLevel + 1;
         PlatformInputController.flushEvents();
+		Application.LoadLevel(nextLevelID);
+	}
+
+	public void ReloadLevel()
+	{
+		int nextLevelID = Application.loadedLevel;
+		PlatformInputController.flushEvents();
 		Application.LoadLevel(nextLevelID);
 	}
 }
