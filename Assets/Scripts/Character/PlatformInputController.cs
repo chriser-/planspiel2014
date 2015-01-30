@@ -24,6 +24,7 @@ public class PlatformInputController : MonoBehaviour
     public delegate void ResetLevel();
     public static event ResetLevel OnReset;
 
+    public AudioClip fall;
     // Use this for initialization
     void Awake()
     {
@@ -117,7 +118,7 @@ public class PlatformInputController : MonoBehaviour
     public IEnumerator Respawn()
     {
         motor.canControl = false;
-        //audio.PlayOneShot();
+        audio.PlayOneShot(fall);
         while (audio.isPlaying)
         {
             yield return new WaitForFixedUpdate();
