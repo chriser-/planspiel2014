@@ -20,6 +20,7 @@ public class PlatformInputController : MonoBehaviour
     private Transform lowestPoint;
     public Transform spawnPoint;
     private PowerUpController powerUps;
+    private bool respawnRunning;
 
     public delegate void ResetLevel();
     public static event ResetLevel OnReset;
@@ -34,6 +35,7 @@ public class PlatformInputController : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnPoint").transform;
         lowestPoint = GameObject.Find("LowestPoint").transform;
         transform.position = spawnPoint.position;
+        respawnRunning = false;
     }
 
     // Update is called once per frame
@@ -85,7 +87,7 @@ public class PlatformInputController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newForward, transform.up);
 
         // Reset to SpawnPoint if too low.
-        if (motor.transform.position.y < lowestPoint.position.y)
+        if (motor.transform.position.y < lowestPoint.position.y && !respawnRunning)
             StartCoroutine(Respawn());
         // Set Animation Variables
         SetAnimationVars();
@@ -117,8 +119,11 @@ public class PlatformInputController : MonoBehaviour
 
     public IEnumerator Respawn()
     {
+        respawnRunning = true;
         motor.canControl = false;
-        audio.PlayOneShot(fall);
+        respawnRunning = true;
+        audio.clip = fall;
+        audio.Play();
         while (audio.isPlaying)
         {
             yield return new WaitForFixedUpdate();
@@ -127,6 +132,7 @@ public class PlatformInputController : MonoBehaviour
         motor.transform.position = spawnPoint.position;
         motor.SetVelocity(Vector3.zero);
         motor.canControl = true;
+        respawnRunning = false;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
