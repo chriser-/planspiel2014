@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public struct PowerUpUiConfig
@@ -50,6 +51,11 @@ public class PowerUpPanel : MonoBehaviour {
                 powerUpUI[p].text.text = string.Format("{0:0.#}", time);
             }
         }
+
+        //remove from dict where time <= 0
+        var itemsToRemove = PowerUpController.powerUps.Where(f => f.Value.time < 0).ToArray();
+        foreach (var item in itemsToRemove)
+            PowerUpController.powerUps.Remove(item.Key);
 	}
 
     void Reset()

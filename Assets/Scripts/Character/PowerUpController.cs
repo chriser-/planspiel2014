@@ -30,6 +30,7 @@ public class PowerUpController : MonoBehaviour {
     
 	void Start () {
         PlatformInputController.OnReset += Reset;
+        powerUps = new Dictionary<PowerUp, pTime>();
 	}
 	
 	void FixedUpdate () {
@@ -45,12 +46,6 @@ public class PowerUpController : MonoBehaviour {
         foreach (var p in powerUps.Keys.ToArray())
             powerUps[p].time -= Time.fixedDeltaTime;
 
-
-
-        //remove from dict where time <= 0
-        var itemsToRemove = powerUps.Where(f => f.Value.time <= 0).ToArray();
-        foreach (var item in itemsToRemove)
-            powerUps.Remove(item.Key);
 	}
 
     void Reset()
