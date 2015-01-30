@@ -108,6 +108,11 @@ public class GUIHandler : MonoBehaviour {
 		//Punkte setzten
 		timeNeeded = stopWatch.TimeAsNumber;
 		gotPoints = DistributePoints(timeNeeded);
+
+		//Punkte kleiner MinPoints vermeiden
+		if(gotPoints < MinPoints)
+			gotPoints = MinPoints;
+
         RectTransform pointsValue = (RectTransform)WinPanel.transform.FindChild("PointsValue");
 		Text punkteValueTextScript = pointsValue.GetComponent<Text>();
 		punkteValueTextScript.text = gotPoints.ToString();
