@@ -19,6 +19,12 @@ public class MainMenu : MonoBehaviour {
 		Debug.Log ("HighscoreData deleted");
 	}
 
+	public void ExitGame(){
+
+		Application.Quit();
+
+	}
+
 	public void LoadFirstLevel()
 	{
 		Application.LoadLevel(1); // 0 is MainMenu
