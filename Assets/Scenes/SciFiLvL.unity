@@ -4921,6 +4921,7 @@ GameObject:
   - 33: {fileID: 485587780}
   - 23: {fileID: 485587779}
   - 64: {fileID: 485587778}
+  - 114: {fileID: 485587777}
   m_Layer: 0
   m_Name: Bodenstueck1
   m_TagString: Untagged
@@ -4940,6 +4941,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2084628133}
   m_RootOrder: 5
+--- !u!114 &485587777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485587775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cceebd7c1026058488e06895b76cc3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 53, y: -8, z: 0}
+  endPoint: {x: 66.4000015, y: -8, z: 0}
+  platformSpeed: 0
 --- !u!64 &485587778
 MeshCollider:
   m_ObjectHideFlags: 0
