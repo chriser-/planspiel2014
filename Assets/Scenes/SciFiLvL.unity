@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 53, y: -8, z: 0}
   endPoint: {x: 66.4000015, y: -8, z: 0}
-  platformSpeed: 0
+  platformSpeed: 5
 --- !u!64 &485587778
 MeshCollider:
   m_ObjectHideFlags: 0
